@@ -1,4 +1,12 @@
-<h1>Placeholder Show page</h1>
-<%= @item.title %>
+<h1>Item detail page</h1>
+<b>Title:</b> <%= @item.title %>
+<br>
+<b>Description:</b> <%= @item.description %>
+<br>
+<b>Latest pickup:</b> <%= @item.end_pickup_at %>
+<br>
 <%= link_to "Edit item", edit_item_path if @item.user == current_user %>
+<br>
 <%= link_to "Delete item", item_path(@item), method: :delete, data: { confirm: "Are you sure?" } if @item.user == current_user %>
+<br>
+<%= link_to 'Book item', new_item_pickup_path(@item) %>

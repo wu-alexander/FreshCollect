@@ -1,6 +1,6 @@
 <h1>Placeholder Index page</h1>
   <ul>
   <% @items.each do |item| %>
-          <li><%= item.title %>, <%= link_to 'show', item %>, <%= link_to 'book', new_item_pickup_path(item) %></li>
+          <li><%= item.title %>, <%= link_to 'show details', item %></li>
       <% end %>
   </ul>

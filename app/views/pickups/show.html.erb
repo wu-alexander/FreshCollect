@@ -1,2 +1,5 @@
-<h1>Placeholder Pickup show page</h1>
-<p>Pickup at <%= @pickup.arrive_at %></p>
+<h1>Congratulations, you can pick up your item!</h1>
+<p><b>Item name: </b><%= @pickup.item.title %> </p>
+<p><b>IPickup at: </b><%= @pickup.arrive_at %></p>
+<p><b>Location:</b> xx (not coded yet)</p>
+<%= link_to "Dashboard", "#" %>
