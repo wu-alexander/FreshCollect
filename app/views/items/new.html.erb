@@ -1,6 +1,16 @@
-<h1>Placeholder Form Item new</h1>
-
-  <%= simple_form_for(@item) do |f| %>
-    <%= f.input :title %>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
+<div class="home-banner pb-5">
+  <div class="container pt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h1>Create a new item</h1>
+          <%= simple_form_for(@item) do |f| %>
+          <%= f.input :title, :label => "Item name" %>
+          <%= f.input :description, :label => "Description", placeholder: 'Details of the items' %>
+          <%= f.input :start_pickup_at, :label => "earliest pickup date" %>
+          <%= f.input :end_pickup_at, :label => "latest pickup date" %>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
