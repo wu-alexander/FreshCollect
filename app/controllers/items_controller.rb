@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [ :show, :edit, :update, :destroy ]
 
   def index
+    @items = Item.all
   end
 
   def show
@@ -15,9 +16,9 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
-      redirect_to @item, notice: "Your item has been created"
+      redirect_to @item
     else
-      render "new"
+      render :new
     end
   end
 
@@ -25,13 +26,16 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item.update(item_params)
-    redirect_to @item, notice: "Your item has been updated"
+    if @item.update(item_params)
+      redirect_to @item
+    else
+      render :edit
+    end
   end
 
   def destroy
     @item.destroy
-    redirect_to items_path, notice: "Your item has been deleted"
+    redirect_to items_path
   end
 
   private
