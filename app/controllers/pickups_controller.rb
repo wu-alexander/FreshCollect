@@ -17,7 +17,7 @@ class PickupsController < ApplicationController
     if @pickup.save
       redirect_to pickup_path(@pickup)
     else
-      render :new
+      render "item/show"
     end
   end
 
