@@ -1,6 +1,6 @@
 <h1>Item detail page</h1>
 <br>
-<%= cl_image_tag @item.photo.key, height: 200, width: 300, crop: :fill %>
+<%= cl_image_tag @item.photo_or_default, height: 100, width: 100, crop: :fill %>
 <br>
 <b>Title:</b> <%= @item.title %>
 <br>
