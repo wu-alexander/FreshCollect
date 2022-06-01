@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @pickup = Pickup.new
   end
 
   def new
