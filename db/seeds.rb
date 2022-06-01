@@ -26,7 +26,7 @@ egg.save
 garlic = Item.new(
   user: default_user,
   title: "Garlic, peppers, tomato, etc.",
-  description: "Some leftover produce I won't get to. Please take them.",
+  description: "Some leftover produce I won't get to. Please take it.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.20..19.60),
