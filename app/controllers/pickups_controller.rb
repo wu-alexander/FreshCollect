@@ -24,6 +24,6 @@ class PickupsController < ApplicationController
   private
 
   def pickup_params
-    params.require(:pickup).permit(:arrive_at)
+    params.require(:pickup).permit(:arrive_at, :photo)
   end
 end
