@@ -1,9 +1,30 @@
-<div class= "home-banner">
-  <div class= "home-container">
-  <h1>Welcome to Fresh Collection</h1>
-  <p>share with your community</p>
+<div class="container-fluid vh-100 py-5 d-flex flex-column justify-content-end" style="background-image: url(<%= asset_path('banner.jpg') %>); background-size: cover">
+  <p>Food sharing in<br>your Community</p>
+  <h1>
+    <span class="text-info fw-bold">Fresh<br></span>
+
+    <span class="text-primary fw-bold">Collect</span>
+  </h1>
+  <div class="text-center p-5">
+    <p>
+      <%= link_to "Share", new_item_path, class:"btn mx-4 d-block btn-primary text-white" %>
+    </p>
+    <p>
+      <%= link_to "Browse", new_item_path, class:"btn mx-4 d-block btn-outline-primary bg-white" %>
+    </p>
+  </div>
+  <div class="pt-5 text-center">
+    <i class="fas fa-arrow-circle-down text-primary fa-3x"></i>
   </div>
 </div>
+
+
+<div class="container-fluid vh-100" style="background-primary">
+  <h1>Welcome to Fresh Collect</h1>
+  <p>So much food gets wasted that could easily be shared with your community</p>
+</div>
+
+
 
 <div class="card" style="width: 18rem;">
   <img src="https://unsplash.com/photos/Hz4FAtKSLKo" class="card-img-top" alt="...">
