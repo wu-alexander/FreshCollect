@@ -1,0 +1,8 @@
+<%= simple_form_for(@item) do |f| %>
+  <%= f.input :photo, as: :file, :label => "Upload photo" %>
+  <%= f.input :title, :label => "Item name" %>
+  <%= f.input :description, :label => "Description", placeholder: 'Details of the items' %>
+  <%= f.input :start_pickup_at, :label => "earliest pickup date" %>
+  <%= f.input :end_pickup_at, :label => "latest pickup date" %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
