@@ -1,0 +1,28 @@
+@keyframes slideup {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  99% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slideup-notification {
+  background-color: #E08E44;
+  position: fixed;
+  top: 0;
+  animation-name: slideup;
+  animation-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-direction: normal;
+  opacity: 0;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+}
