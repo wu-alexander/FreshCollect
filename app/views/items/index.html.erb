@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Placeholder Index page</h1>
 <ul>
   <% @items.each do |item| %>
@@ -11,3 +12,12 @@
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+=======
+<h1>All items available</h1>
+  <ul>
+    <% @items.each do |item| %>
+      <li><%= item.title %>, <%= link_to 'show details', item %></li>
+      <%= cl_image_tag item.photo_or_default, height: 100, width: 100, crop: :fill %>
+    <% end %>
+  </ul>
+>>>>>>> cb1e025a6851ef6e9f1c84e3ea33675ab8a8b76f
