@@ -15,6 +15,8 @@ class PickupsController < ApplicationController
     @pickup.item = Item.find(params[:item_id])
     @pickup.user = current_user
     if @pickup.save
+      PickupNotification.with(pickup: @pickup).deliver_later(@item.user)
+
       redirect_to pickup_path(@pickup)
     else
       render "item/show"
