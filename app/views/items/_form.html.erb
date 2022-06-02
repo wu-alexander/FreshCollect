@@ -4,5 +4,15 @@
   <%= f.input :description, :label => "Description", placeholder: 'Details of the items' %>
   <%= f.input :start_pickup_at, :label => "earliest pickup date" %>
   <%= f.input :end_pickup_at, :label => "latest pickup date" %>
+
+  <% unless current_user.address.present? %>
+    <fieldset>
+      <legend>We need your address for that:</legend>
+      <%= f.simple_fields_for :user do |fu| %>
+        <%= fu.input :address %>
+      <% end %>
+    </fieldset>
+  <% end %>
+
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

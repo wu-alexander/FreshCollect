@@ -3,10 +3,19 @@ puts "Creating users and items"
 default_user = User.create!(
   email: "user@user.com",
   password: "123456",
-  first_name: "Diego",
-  last_name: "Rivera",
+  first_name: "Fiona",
+  last_name: "Feichtinger",
   phone_number: "888 326 9937",
-  address: "Av. Álvaro Obregón 213, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX"
+  address: "Av. Álvaro Obregón 212, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX"
+)
+
+collector_user = User.create!(
+  email: "collector@user.com",
+  password: "123456",
+  first_name: "Sina",
+  last_name: "Beeler",
+  phone_number: "52 56 9200 9393",
+  address: "Stationsstrasse 56, 8003 Zurich"
 )
 
 egg = Item.new(

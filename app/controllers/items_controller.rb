@@ -20,7 +20,13 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def user_address
+    params.dig(:item, :user, :address)
+  end
+
   def create
+    current_user.update(address: user_address) if user_address.present?
+
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
