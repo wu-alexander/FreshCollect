@@ -1,12 +1,16 @@
-<h1>Item detail page</h1>
-<b>Title:</b> <%= @item.title %>
+<h1>It's almost shared!</h1>
 <br>
-<b>Description:</b> <%= @item.description %>
+<div class="card" style="width: 18rem;">
+<%= cl_image_tag @item.photo_or_default, height: 100, width: 180, crop: :fill %>
 <br>
-<b>Latest pickup:</b> <%= @item.end_pickup_at %>
+<b>Title</b> <%= @item.title %>
 <br>
-<%= link_to "Edit item", edit_item_path if @item.user == current_user %>
+<b>Description</b> <%= @item.description %>
 <br>
-<%= link_to "Delete item", item_path(@item), method: :delete, data: { confirm: "Are you sure?" } if @item.user == current_user %>
+<b>Latest pickup</b> <%= @item.end_pickup_at %>
 <br>
-<%= link_to 'Book item', new_item_pickup_path(@item) %>
+<%= link_to "Edit", edit_item_path if @item.user == current_user %> <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure?" } if @item.user == current_user %>
+<br>
+<br>
+<b>Book the item</b> <%= render "pickups/form", item: @item, pickup: @pickup %>
+<br>

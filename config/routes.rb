@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :pickups, only: [:new, :create]
   end
   resources :pickups, only: [:show]
+  resources :users, only: [:show, :edit, :update]
   resource :dashboard, only: [:show]
 end

@@ -1,6 +1,7 @@
 <h1>Placeholder Index page</h1>
   <ul>
-  <% @items.each do |item| %>
-          <li><%= item.title %>, <%= link_to 'show details', item %></li>
-      <% end %>
+    <% @items.each do |item| %>
+      <li><%= item.title %>, <%= link_to 'show details', item %></li>
+      <%= cl_image_tag item.photo_or_default, height: 100, width: 100, crop: :fill %>
+    <% end %>
   </ul>
