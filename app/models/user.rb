@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :notifications, as: :recipient
 
+  geocoded_by :address
+  before_save :geocode, if: :address_changed?
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
