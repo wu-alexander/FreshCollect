@@ -1,6 +1,6 @@
-<h1>Congratulations, you can pick up your item!</h1>
+<h1>Perfect match, thank you for not throwing me away!</h1>
 <%= cl_image_tag @pickup.item.photo.key, height: 300, width: 400, crop: :fill %>
-<p><b>Item name: </b><%= @pickup.item.title %> </p>
-<p><b>Pickup at: </b><%= @pickup.arrive_at %></p>
-<p><b>Location:</b> xx (not coded yet)</p>
+<p><%= @pickup.item.title %> </p>
+<p><i class="fas fa-calendar-alt"></i>  <%= @pickup.arrive_at.to_time.strftime('%B %e at %l:%M %p') %></p>
+<p><i class="fas fa-map-marker-alt"></i> Av. Álvaro Obregón 212, Roma, CDMX</p>
 <%= link_to "My Dashboard", dashboard_path %>
