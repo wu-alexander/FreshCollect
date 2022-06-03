@@ -31,6 +31,9 @@ class ItemsController < ApplicationController
     @item.user = current_user
     if @item.save
       # users_near_item # create notifications for those
+      users_near_item.each do |near_user|
+        ItemNotification.with(item: @item).deliver_later(near_user)
+      end
       redirect_to @item
     else
       render :new
@@ -56,7 +59,7 @@ class ItemsController < ApplicationController
   private
 
   def users_near_item
-    User.near(@item, 3).where.not(id: @item.user)
+    User.near(@item, 5).where.not(id: @item.user)
   end
 
   def set_item
