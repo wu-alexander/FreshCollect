@@ -6,10 +6,19 @@ default_user = User.create!(
   first_name: "Fiona",
   last_name: "Feichtinger",
   phone_number: "888 326 9937",
-  address: "Av. Álvaro Obregón 212, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX"
+  address: "Av. Álvaro Obregón 212, Roma, CDMX"
 )
 
-collector_user = User.create!(
+initial_mexican_user = User.create!(
+  email: "mexican@user.com",
+  password: "123456",
+  first_name: "Nadia",
+  last_name: "Angulo",
+  phone_number: "888 326 9937",
+  address: "Av. Álvaro Obregón 195, Roma, CDMX"
+)
+
+initial_swiss_user = User.create!(
   email: "collector@user.com",
   password: "123456",
   first_name: "Sina",

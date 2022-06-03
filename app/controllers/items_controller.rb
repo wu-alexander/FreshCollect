@@ -30,6 +30,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user = current_user
     if @item.save
+      # users_near_item # create notifications for those
       redirect_to @item
     else
       render :new
@@ -53,6 +54,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def users_near_item
+    User.near(@item, 3).where.not(id: @item.user)
+  end
 
   def set_item
     @item = Item.find(params[:id])
