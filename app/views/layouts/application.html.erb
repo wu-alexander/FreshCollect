@@ -13,10 +13,11 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless current_user.present? %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>
+    <%= render "shared/mobile_menu" if current_user.present? %>
     <%= render 'shared/notification_box' %>
   </body>
 </html>

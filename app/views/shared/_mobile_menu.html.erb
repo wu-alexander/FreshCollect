@@ -1,0 +1,29 @@
+<div class="mobile-menu">
+  <div class="icons">
+    <%= link_to root_path, class: "d-block" do %>
+      <i class="fa fa-home fa-3x"></i>
+    <% end %>
+    <small>Home</small>
+  </div>
+
+  <div class="icons">
+    <%= link_to dashboard_path class: "d-block" do %>
+      <%= image_tag "icon.png", width: 80 %>
+    <% end %>
+    <small>Dashboard</small>
+  </div>
+
+  <div class="icons">
+    <%= link_to "#" do %>
+      <i class="fas fa-bell fa-3x"></i>
+    <% end %>
+     <small>Notification</small>
+  </div>
+
+  <div class="icons">
+    <%= link_to user_path(current_user) do %>
+      <i class="fas fa-user-circle fa-3x"></i>
+    <% end %>
+    <small>Profile</small>
+  </div>
+</div>
