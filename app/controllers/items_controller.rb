@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [ :show, :edit, :update, :destroy ]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     @items = current_user&.geocoded? ? Item.near(current_user, 50) : Item.all
