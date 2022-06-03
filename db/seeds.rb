@@ -27,23 +27,23 @@ initial_swiss_user = User.create!(
   address: "Stationsstrasse 56, 8003 Zurich"
 )
 
-egg = Item.new(
+bread = Item.new(
   user: default_user,
-  title: "Large brown eggs",
-  description: "Perfectly good brown eggs I bought last week. I'll be traveling and don't want to waste them.",
+  title: "Two loafs of bread",
+  description: "Sliced square white sandwich bread loaf and a one classic nordic whole-grain rye bread.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/12/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.20..19.60),
   longitude: rand(-99.30..-98.90)
 )
-image_url = "https://source.unsplash.com/wJbDzUQoFBQ"
-downloaded_image = URI.open(image_url)
-egg.photo.attach(io: downloaded_image, filename: "egg-#{egg.id}")
-egg.save
+image_path = "db/support/items/groceries3.jpeg"
+downloaded_image = File.open(image_path)
+bread.photo.attach(io: downloaded_image, filename: "bread-#{bread.id}")
+bread.save
 
 garlic = Item.new(
   user: default_user,
-  title: "Garlic, peppers, tomato, etc.",
+  title: "Garlic, peppers, tomatos",
   description: "Some leftover produce I won't get to. Please take it.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
@@ -55,19 +55,19 @@ downloaded_image = URI.open(image_url)
 garlic.photo.attach(io: downloaded_image, filename: "garlic-#{garlic.id}")
 garlic.save
 
-cauliflower = Item.new(
+vegetables = Item.new(
   user: default_user,
-  title: "Cauliflower",
-  description: "Just a regular head of cauliflower",
+  title: "Mix of roast vegetables + 2 Avocado",
+  description: "1 large broccoli head, 3 paprika, 2 sweet potatoes and 2 large ripe avocados",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.20..19.60),
   longitude: rand(-99.30..-98.90)
 )
-image_url = "https://source.unsplash.com/0XVrBLy73rw"
-downloaded_image = URI.open(image_url)
-cauliflower.photo.attach(io: downloaded_image, filename: "cauliflower-#{cauliflower.id}")
-cauliflower.save
+image_path = "db/support/items/groceries.jpeg"
+downloaded_image = File.open(image_path)
+vegetables.photo.attach(io: downloaded_image, filename: "vegetables-#{vegetables.id}")
+vegetables.save
 
 potato = Item.new(
   user: default_user,
@@ -78,7 +78,7 @@ potato = Item.new(
   latitude: rand(19.20..19.60),
   longitude: rand(-99.30..-98.90)
 )
-image_url = "https://source.unsplash.com/_SHdelGzAp8"
-downloaded_image = URI.open(image_url)
+image_path = "db/support/items/groceries2.jpeg"
+downloaded_image = File.open(image_path)
 potato.photo.attach(io: downloaded_image, filename: "potato-#{potato.id}")
 potato.save
