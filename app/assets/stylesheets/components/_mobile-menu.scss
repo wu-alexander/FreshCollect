@@ -1,0 +1,28 @@
+.mobile-menu {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FDE6E6;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+  a {
+    text-decoration: none;
+  }
+
+  .icons {
+    flex-direction: column;
+    color: #74896D;
+    margin-top: 5px;
+  }
+
+.fa-3x {
+color: #E08E44;
+
+
+}
+
+}
