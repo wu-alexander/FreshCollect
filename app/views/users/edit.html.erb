@@ -1,17 +1,10 @@
-<div class="container pt-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-6">
-      <h1>Update your profile</h1>
-      <%= simple_form_for(@user) do |f| %>
-        <%= f.input :photo %>
-        <%= f.input :email %>
-        <%= f.input :password %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :address %>
-        <%= f.input :phone_number %>
-        <%= f.submit class: "btn-primary" %>
-      <% end %>
+<div class="home-banner pb-5" style="background-color: #74896D;">
+  <div class="container pt-3">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h2>Update your profile</h2>
+        <%= render "form", users: @users, disabled: false %>
+      </div>
     </div>
   </div>
 </div>
