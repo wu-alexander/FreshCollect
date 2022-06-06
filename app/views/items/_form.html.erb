@@ -1,9 +1,9 @@
 <%= simple_form_for(@item) do |f| %>
-  <%= f.input :photo, as: :file, :label => "Upload photo" %>
-  <%= f.input :title, :label => "Item name" %>
-  <%= f.input :description, :label => "Description", placeholder: 'Details of the items' %>
-  <%= f.input :start_pickup_at, :label => "earliest pickup date" %>
-  <%= f.input :end_pickup_at, :label => "latest pickup date" %>
+  <%= f.input :photo, as: :file, :label => "Add a photo of your groceries" %>
+  <%= f.input :title, label: "Title" %>
+  <%= f.input :description, label: "Description", placeholder: 'Details of the items' %>
+  <%= f.input :start_pickup_at, html5: true, input_html: { value: DateTime.current.strftime("%Y-%m-%d %H:00") }, label: "Earliest pickup date" %>
+  <%= f.input :end_pickup_at, html5: true, input_html: { value: (DateTime.current + 2.hours).strftime("%Y-%m-%d %H:00") }, label: "Latest pickup date" %>
 
   <% unless current_user.address.present? %>
     <fieldset>
@@ -14,5 +14,5 @@
     </fieldset>
   <% end %>
 
-  <%= f.submit class: "btn btn-primary" %>
+  <%= f.submit 'Share it now', class: "btn btn-primary" %>
 <% end %>
