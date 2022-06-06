@@ -19,11 +19,51 @@
 </div>
 
 
+
+<div class="bg-primary p-3">
 <div class="container-fluid vh-0" style="background-color: #E67E22; height: 120px; ">
   <h1>Welcome to Fresh Collect</h1>
   <p>So much food gets wasted that could easily be shared with your community</p>
 </div>
 
 
-<div class="container-fluid vh-100 py-5 d-flex flex-column justify-content-end" style="background-image: url(<%= asset_path('papaya.png') %>); background-size: contain; background-repeat: no-repeat">
+<div class="">
+  <%= image_tag 'papaya.png', class: "img-fluid" %>
+</div>
+<div class="container-about">
+  <div class="card" style="width: 18rem;">
+    <img src="<%= asset_path('Icons-1.gif') %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Do you have excess Groceries at home?</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%= link_to "Share", new_item_path, class:"btn mx-4 d-block btn-primary text-white" %>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+  <img src="<%= asset_path('Icons-2.gif') %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Do you have excess Groceries at home?</h5>
+      <p class="card-text">Share your ex</p>
+      <%= link_to "Share", new_item_path, class:"btn mx-4 d-block btn-primary text-white" %>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="<%= asset_path('Icon-3.gif') %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Share your Groceries with your community</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%= link_to "Share", new_item_path, class:"btn mx-4 d-block btn-primary text-white" %>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="<%= asset_path('Icons-4.gif') %>" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Do you have excess Groceries at home?</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%= link_to "Share", new_item_path, class:"btn mx-4 d-block btn-primary text-white" %>
+    </div>
+  </div>
 </div>

@@ -1,29 +1,32 @@
 <div class="mobile-menu">
   <div class="icons">
     <%= link_to root_path, class: "d-block" do %>
-      <i class="fa fa-home fa-3x"></i>
+       <%= image_tag "Home-Icon.png", width: 50, height: 50 %>
     <% end %>
-    <small>Home</small>
+    <p class="small mb-0">Home</p>
   </div>
 
   <div class="icons">
     <%= link_to dashboard_path class: "d-block" do %>
+      <%= image_tag "Dashboard-Icon.png", width: 50, height: 50 %>
       <i class="fa fa-chart-line fa-3x"></i>
     <% end %>
-    <small>Dashboard</small>
+    <p class="small mb-0">Dashboard</p>
   </div>
 
-  <div class="icons">
-    <%= link_to "#" do %>
-      <i class="fas fa-bell fa-3x"></i>
+  <div class="icons dropup">
+    <%= link_to "#", "data-bs-toggle": "dropdown", "aria-expanded": false do %>
+      <%= image_tag "Notifications-Icon.png", width: 50, height: 50 %>
     <% end %>
-     <small>Notification</small>
+    <%= render "shared/notification_box" %>
+
+     <p class="small mb-0">Notification</p>
   </div>
 
   <div class="icons">
     <%= link_to user_path(current_user) do %>
-      <i class="fas fa-user-circle fa-3x"></i>
+      <%= image_tag "Profile-Icon.png", width: 50, height: 50 %>
     <% end %>
-    <small>Profile</small>
+    <p class="small mb-0">Profile</p>
   </div>
 </div>

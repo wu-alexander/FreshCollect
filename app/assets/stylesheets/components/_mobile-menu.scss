@@ -14,15 +14,12 @@
   }
 
   .icons {
-    flex-direction: column;
-    color: #74896D;
+    flex-grow: 1;
+    color: $fc-light-green;
     margin-top: 5px;
+
+    img {
+      object-fit: contain;
+    }
   }
-
-.fa-3x {
-color: #E08E44;
-
-
-}
-
 }
