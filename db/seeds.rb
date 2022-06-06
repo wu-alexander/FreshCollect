@@ -6,7 +6,7 @@ user1 = User.create!(
   first_name: "Fiona",
   last_name: "Feichtinger",
   phone_number: "888 326 9937",
-  address: "Av. Álvaro Obregón 212, Roma, CDMX"
+  address: "Av. Álvaro Obregón 212, Roma, CDMX",
   exchanges: 21
 )
 
@@ -16,7 +16,7 @@ user2 = User.create!(
   first_name: "Alex",
   last_name: "Wu",
   phone_number: "888 327 9938",
-  address: "Av. Insurgentes Sur 432, Hipódromo, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico"
+  address: "Av. Insurgentes Sur 432, Hipódromo, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico",
   exchanges: 24
 )
 
@@ -26,7 +26,7 @@ user3 = User.create!(
   first_name: "Caio",
   last_name: "Andrade",
   phone_number: "888 328 9939",
-  address: "Av. Álvaro Obregón 298, Colonia Condesa, Cuauhtémoc, 06140 Ciudad de México, CDMX, Mexico"
+  address: "Av. Álvaro Obregón 298, Colonia Condesa, Cuauhtémoc, 06140 Ciudad de México, CDMX, Mexico",
   exchanges: 15
 )
 
@@ -36,7 +36,7 @@ user4 = User.create!(
   first_name: "Diego",
   last_name: "Rodriguez",
   phone_number: "888 329 9930",
-  address: "Álvaro Obregón 154 Primer piso, Roma Nte., 06700 Ciudad de México, CDMX, Mexico"
+  address: "Álvaro Obregón 154 Primer piso, Roma Nte., 06700 Ciudad de México, CDMX, Mexico",
   exchanges: 8
 )
 
@@ -46,7 +46,7 @@ initial_mexican_user = User.create!(
   first_name: "Nadia",
   last_name: "Angulo",
   phone_number: "888 326 9937",
-  address: "Av. Álvaro Obregón 195, Roma, CDMX"
+  address: "Av. Álvaro Obregón 195, Roma, CDMX",
   exchanges: 13
 )
 
@@ -56,7 +56,7 @@ initial_swiss_user = User.create!(
   first_name: "Sina",
   last_name: "Beeler",
   phone_number: "52 56 9200 9393",
-  address: "Stationsstrasse 56, 8003 Zurich"
+  address: "Stationsstrasse 56, 8003 Zurich",
   exchanges: 17
 )
 
