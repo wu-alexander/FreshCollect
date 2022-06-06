@@ -1,21 +1,15 @@
-
-<div class="container">
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-    <%= link_to "Edit profile", edit_user_path(current_user), class: 'btn btn-primary' if @user == current_user %>
-  <br><br>
-  <div>
-    <p><b>My profile:</b></p>
-    <div class="user-info">
-      <%= cl_image_tag @user.photo_or_default, height: 250, width: 250, crop: :fill %>
-      <%= simple_form_for(@user) do |f| %>
-        <fieldset disabled>
-        <%= f.input :email %>
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
-        <%= f.input :address %>
-        <%= f.input :phone_number %>
-        </fieldset>
-      <% end %>
+<div class="home-banner pb-5" style="background-color: #74896D;">
+    <div class="text-end pt-3 pe-3">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light btn-sm" %>
+    </div>
+  <div class="card-body pt-3">
+    <div class="text-center show-card" style="background: rgba(255,255,255,0.9)">
+      <%= cl_image_tag @user.photo_or_default, height: 100, width: 100, crop: :fill, class: 'rounded-circle m-3' %>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @user.first_name %> <%= @user.last_name %></h6>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @user.address %></h6>
+      <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-at"></i> <%= @user.email %></h6>
+      <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-phone"></i> <%= @user.phone_number %></h6>
+      <%= link_to "Edit profile", edit_user_path(current_user), class: 'btn btn-primary m-4' if @user == current_user %>
     </div>
   </div>
 </div>
