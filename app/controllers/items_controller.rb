@@ -15,6 +15,12 @@ class ItemsController < ApplicationController
 
   def show
     @pickup = Pickup.new
+    @markers =
+      [{
+        lat: @item.latitude,
+        lng: @item.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { item: @item })
+      }]
   end
 
   def new
