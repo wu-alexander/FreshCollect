@@ -26,3 +26,13 @@
   animation-duration: 7s;
   animation-iteration-count: 1;
 }
+
+.mobile-menu {
+  .dropdown-menu.show {
+    bottom: 65px !important;
+    width: 90vw;
+    left: 5vw !important;
+    position: fixed !important;
+    transform: none !important;
+  }
+}

@@ -9,6 +9,10 @@ class ItemNotification < Noticed::Base
 
   param :item
 
+  def popup_text
+    "#{item.user.first_name} just listed #{item.title} near you!"
+  end
+
   def text
     "#{item.user.first_name} just listed #{item.title} near you!"
   end
@@ -23,7 +27,7 @@ class ItemNotification < Noticed::Base
 
   def to_websocket
     {
-      popup_html: ApplicationController.render(partial: "notifications/notification", locals: { notification: self })
+      popup_html: ApplicationController.render(partial: "notifications/popup_notification", locals: { notification: self })
     }
   end
 end

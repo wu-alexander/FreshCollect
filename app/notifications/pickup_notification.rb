@@ -4,8 +4,12 @@ class PickupNotification < Noticed::Base
 
   param :pickup
 
-  def text
+  def popup_text
     "Yay! Your #{pickup.item.title} has just been booked!"
+  end
+
+  def text
+    "Your #{pickup.item.title} has just been booked!"
   end
 
   def path
@@ -18,7 +22,7 @@ class PickupNotification < Noticed::Base
 
   def to_websocket
     {
-      popup_html: ApplicationController.render(partial: "notifications/notification", locals: { notification: self })
+      popup_html: ApplicationController.render(partial: "notifications/popup_notification", locals: { notification: self })
     }
   end
 end
