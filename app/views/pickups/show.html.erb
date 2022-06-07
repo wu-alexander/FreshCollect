@@ -1,6 +1,16 @@
-<h1>Perfect match, thank you for not throwing me away!</h1>
-<%= cl_image_tag @pickup.item.photo.key, height: 300, width: 400, crop: :fill %>
-<p><%= @pickup.item.title %> </p>
-<p><i class="fas fa-calendar-alt"></i> <%= @pickup.arrive_at.to_time.strftime('%B %e at %l:%M %p') %></p>
-<p><i class="fas fa-map-marker-alt"></i> Av. Álvaro Obregón 212, Roma, CDMX</p>
-<%= link_to "My Dashboard", dashboard_path %>
+ <div class="home-banner pb-5 bg-basket-image">
+    <div class="text-end pt-3 pe-3">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light btn-sm" %>
+    </div>
+
+      <div class="card-body pt-5">
+        <div class="text-center show-card" style="background: rgba(255,255,255,0.9)">
+        <div> <%= cl_image_tag @pickup.item.photo.key, height: 300, width: 350, crop: :fill %>
+    <p><%= @pickup.item.title %> </p> </div>
+    <p><i class="fas fa-calendar-alt"></i> <%= @pickup.arrive_at.to_time.strftime('%B %e at %l:%M %p') %></p>
+    <p><i class="fas fa-map-marker-alt"></i> Av. Álvaro Obregón 212, Roma, CDMX</p>
+    <%= link_to "My Dashboard", dashboard_path %>
+        </div>
+      </div>
+  </div>
+</div>
