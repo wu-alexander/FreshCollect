@@ -1,10 +1,10 @@
-<div class="home-banner pb-5" style="background-color: #74896D;">
+<div class="home-banner pb-5 bg-leave-image">
     <div class="text-end pt-3 pe-3">
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light btn-sm" %>
     </div>
-  <div class="card-body pt-3">
+  <div class="card-body pt-5">
     <div class="text-center show-card" style="background: rgba(255,255,255,0.9)">
-      <%= cl_image_tag @user.photo_or_default, height: 100, width: 100, crop: :fill, class: 'rounded-circle m-3' %>
+      <div><%= cl_image_tag @user.photo_or_default, height: 100, width: 100, crop: :fill, class: 'rounded-circle m-3' %></div>
       <h6 class="card-subtitle mb-2 text-muted"><%= @user.first_name %> <%= @user.last_name %></h6>
       <h6 class="card-subtitle mb-2 text-muted"><%= @user.address %></h6>
       <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-at"></i> <%= @user.email %></h6>
