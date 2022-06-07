@@ -3,7 +3,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #FDE6E6;
+  background-color: white;
   text-align: center;
   display: flex;
   justify-content: space-evenly;
@@ -16,7 +16,7 @@
   .icons {
     flex-grow: 1;
     color: $fc-light-green;
-    margin-top: 5px;
+    margin: 6px 0px 4px;
 
     img {
       object-fit: contain;
