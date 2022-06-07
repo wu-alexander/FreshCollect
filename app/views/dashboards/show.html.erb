@@ -1,17 +1,34 @@
-<div class="container">
+<div class="container my-5">
   <h1>My Dashboard</h1>
-  <br>
-  <h2>My listings</h2>
-  <% @dashboard.sharer_items.each do |item| %>
-    <div class="card p-3">
-      <%= item.title %><%= link_to "See details", item_path(item) %>
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-listing-tab" data-bs-toggle="tab"
+      data-bs-target="#nav-listing" type="button" role="tab" aria-controls="nav-listing" aria-selected="true">
+      Listings</button>
+
+      <button class="nav-link" id="nav-pickup-tab" data-bs-toggle="tab"
+      data-bs-target="#nav-pickup" type="button" role="tab" aria-controls="nav-pickup" aria-selected="true">
+      Pickups</button>
     </div>
-  <% end %>
-  <br>
-  <h2>My pickups</h2>
-  <% @dashboard.collector_pickups.each do |pickup| %>
-    <div class="card p-3">
-      <%= pickup.item.title %><%= link_to "See details", pickup_path(pickup) %>
+  </nav>
+  <div class="tab-content" id="nav-tab-content">
+    <div class="tab-pane fade show active p-3" id="nav-listing" role="tabpanel" aria-labelledby="nav-listing-tab">
+      <% @dashboard.sharer_items.each do |item| %>
+        <div class="card p-3">
+          <%= cl_image_tag item.photo_or_default, height: 100, width: 180, crop: :fill %>
+          <%= item.title %>
+          <%= link_to "See details", item_path(item) %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="tab-pane fade p-3" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup-tab">
+      <% @dashboard.collector_pickups.each do |pickup| %>
+        <div class="card p-3">
+          <%= cl_image_tag pickup.item.photo_or_default, height: 100, width: 180, crop: :fill %>
+          <%= pickup.item.title %>
+          <%= link_to "See details", pickup_path(pickup) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
