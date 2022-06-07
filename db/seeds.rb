@@ -10,6 +10,10 @@ user1 = User.create!(
   exchanges: 21
 )
 
+user1_file = File.open("db/support/items/profile_pic_fiona.jpg")
+user1.photo.attach(io: user1_file, filename: "profile_pic_fiona.jpg")
+user1.save!
+
 user2 = User.create!(
   email: "user2@user.com",
   password: "123456",
@@ -19,6 +23,10 @@ user2 = User.create!(
   address: "Av. Insurgentes Sur 432, Hipódromo, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico",
   exchanges: 24
 )
+
+user2_file = File.open("db/support/items/profile_pic_alex.jpg")
+user2.photo.attach(io: user2_file, filename: "profile_pic_alex.jpg")
+user2.save!
 
 user3 = User.create!(
   email: "user3@user.com",
@@ -30,6 +38,10 @@ user3 = User.create!(
   exchanges: 15
 )
 
+user3_file = File.open("db/support/items/profile_pic_caio.jpeg")
+user3.photo.attach(io: user3_file, filename: "profile_pic_caio.jpeg")
+user3.save!
+
 user4 = User.create!(
   email: "user4@user.com",
   password: "123456",
@@ -39,6 +51,10 @@ user4 = User.create!(
   address: "Álvaro Obregón 154 Primer piso, Roma Nte., 06700 Ciudad de México, CDMX, Mexico",
   exchanges: 8
 )
+
+user4_file = File.open("db/support/items/profile_pic_diego.jpeg")
+user4.photo.attach(io: user4_file, filename: "profile_pic_diego.jpeg")
+user4.save!
 
 initial_mexican_user = User.create!(
   email: "mexican@user.com",
@@ -50,8 +66,12 @@ initial_mexican_user = User.create!(
   exchanges: 13
 )
 
+initial_mexican_file = File.open("db/support/items/profile_pic_nadia.jpg")
+initial_mexican_user.photo.attach(io: initial_mexican_file, filename: "profile_pic_nadia.jpg")
+initial_mexican_user.save!
+
 initial_swiss_user = User.create!(
-  email: "collector@user.com",
+  email: "sina@gmail.com",
   password: "123456",
   first_name: "Sina",
   last_name: "Beeler",
@@ -59,6 +79,10 @@ initial_swiss_user = User.create!(
   address: "Stationsstrasse 56, 8003 Zurich",
   exchanges: 17
 )
+
+initial_swiss_file = File.open("db/support/items/profile_pic_sina.jpg")
+initial_swiss_user.photo.attach(io: initial_swiss_file, filename: "profile_pic_sina.jpg")
+initial_swiss_user.save!
 
 bread = Item.new(
   user: user1,
