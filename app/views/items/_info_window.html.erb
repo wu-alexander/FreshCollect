@@ -1,3 +1,7 @@
-<h5><%= item.title %></h5>
-<p><%= item.user_address %></p>
-<p><%= link_to "See details", item_path(item) %></p>
+<div class="p-1">
+  <h6><%= item.title %></h6>
+    <div class="m-1">
+    <%= cl_image_tag item.photo_or_default, height: 50, width: 100, crop: :fill %>
+    </div>
+    <h6><%= link_to "See details", item_path(item) %></h6>
+</div>
