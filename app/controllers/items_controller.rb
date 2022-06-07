@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
       {
         lat: item.latitude,
         lng: item.longitude,
+        image_url: helpers.asset_url("icon.png"),
         info_window: render_to_string(partial: "info_window", locals: { item: item })
       }
     end
@@ -19,6 +20,7 @@ class ItemsController < ApplicationController
       [{
         lat: @item.latitude,
         lng: @item.longitude,
+        image_url: helpers.asset_url("icon.png"),
         info_window: render_to_string(partial: "info_window", locals: { item: @item })
       }]
   end
