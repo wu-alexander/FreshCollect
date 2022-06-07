@@ -15,8 +15,8 @@ class Item < ApplicationRecord
     photo.attached? ? photo.key : "default_item"
   end
 
-  def pickup_status
-    active_pickup_status || :available
+  def status
+    active_pickup_status || :Available
   end
 
   private
