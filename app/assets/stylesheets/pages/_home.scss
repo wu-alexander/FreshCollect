@@ -1,11 +1,16 @@
 // Specific CSS for your home-page
 .container-welcome {
-position: absolute;
-width: 428px;
-height: 131px;
-background: white;
+  position: absolute;
+  width: 428px;
+  height: 131px;
+  background: white;
 }
 
-.container-About{
-justify-content: center;
+.container-About {
+  justify-content: center;
+}
+
+#text-subheader {
+  color: #74896D;
+  text-shadow: 1px 1px white;
 }
