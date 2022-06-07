@@ -1,16 +1,16 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :photo, as: :file, :label => "Change your photo" %>
-    <%= f.input :email %>
-    <div class="row">
-      <div class="col">
-        <%= f.input :first_name %>
+ <%= simple_form_for(@user) do |f| %>
+    <%= f.input :photo, as: :file, :label => "Change your photo" %>
+      <%= f.input :email %>
+      <div class="row">
+        <div class="col">
+          <%= f.input :first_name %>
+        </div>
+        <div class="col">
+          <%= f.input :last_name %>
+        </div>
       </div>
-      <div class="col">
-        <%= f.input :last_name %>
-      </div>
-    </div>
-    <%= f.input :address %>
-    <%= f.input :phone_number %>
-    <%= f.button :submit, class: "btn btn-primary" unless disabled %>
-  </fieldset>
-  <% end %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.button :submit, class: "btn btn-primary" unless disabled %>
+    </fieldset>
+    <% end %>
