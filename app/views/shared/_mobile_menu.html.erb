@@ -1,21 +1,21 @@
 <div class="mobile-menu">
   <div class="icons">
     <%= link_to root_path, class: "d-block" do %>
-       <%= image_tag "Home-new.png", width: 50, height: 50 %>
+       <%= image_tag "Home-new.png", width: 40, height: 40 %>
     <% end %>
     <p class="small mb-0">Home</p>
   </div>
 
   <div class="icons">
     <%= link_to dashboard_path class: "d-block" do %>
-      <%= image_tag "Dashboard-new.png", width: 50, height: 50 %>
+      <%= image_tag "Dashboard-new.png", width: 35, height: 35 %>
     <% end %>
     <p class="small mb-0">Dashboard</p>
   </div>
 
   <div class="icons dropup">
     <%= link_to "#", "data-bs-toggle": "dropdown", "aria-expanded": false do %>
-      <%= image_tag "Notifications-new.png", width: 50, height: 50 %>
+      <%= image_tag "Notifications-new.png", width: 40, height: 40 %>
     <% end %>
     <%= render "shared/notification_box" %>
 
@@ -24,7 +24,7 @@
 
   <div class="icons">
     <%= link_to user_path(current_user) do %>
-      <%= image_tag "Profile-new.png", width: 50, height: 50 %>
+      <%= image_tag "Profile-new.png", width: 40, height: 40 %>
     <% end %>
     <p class="small mb-0">Profile</p>
   </div>
