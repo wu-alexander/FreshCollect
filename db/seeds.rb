@@ -86,7 +86,7 @@ initial_swiss_user.save!
 
 bread = Item.new(
   user: user1,
-  title: "Two loafs of bread",
+  title: "Two loaves of bread",
   description: "Sliced square white sandwich bread loaf and a one classic nordic whole-grain rye bread.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/12/2022 20:00", "%m/%d/%Y %H:%M"),
@@ -100,7 +100,7 @@ bread.save
 
 garlic = Item.new(
   user: user2,
-  title: "Garlic, peppers, tomatos",
+  title: "Garlic, peppers, tomatoes",
   description: "Some leftover produce I won't get to. Please take it.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
@@ -114,8 +114,8 @@ garlic.save
 
 vegetables = Item.new(
   user: user3,
-  title: "Mix of roast vegetables + 2 Avocados",
-  description: "1 large broccoli head, 3 paprika, 2 sweet potatoes and 2 large ripe avocados",
+  title: "Mix of vegetables + 2 Avocados",
+  description: "1 large broccoli head, 2 sweet potatoes and 2 large ripe avocados",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
 end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.20..19.60),

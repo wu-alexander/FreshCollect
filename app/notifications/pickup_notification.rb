@@ -5,7 +5,7 @@ class PickupNotification < Noticed::Base
   param :pickup
 
   def text
-    "Yay! Your #{pickup.item.title} has just been booked!"
+    "Yay! #{pickup.item.title} now scheduled for pickup!"
   end
 
   def path
