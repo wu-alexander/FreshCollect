@@ -2,8 +2,8 @@
   <%= f.input :photo, as: :file, :label => "Add a photo of your groceries" %>
   <%= f.input :title, label: "Title" %>
   <%= f.input :description, label: "Description", placeholder: 'Details of the items' %>
-  <%= f.input :start_pickup_at, html5: true, input_html: { value: DateTime.current.strftime("%Y-%m-%d %H:00") }, label: "Earliest pickup date" %>
-  <%= f.input :end_pickup_at, html5: true, input_html: { value: (DateTime.current + 2.hours).strftime("%Y-%m-%d %H:00") }, label: "Latest pickup date" %>
+  <%= f.input :start_pickup_at, html5: true, input_html: { value: DateTime.current.strftime("%Y-%m-%dT%H:00") }, label: "Earliest pickup date" %>
+  <%= f.input :end_pickup_at, html5: true, input_html: { value: (DateTime.current + 2.hours).strftime("%Y-%m-%dT%H:00") }, label: "Latest pickup date" %>
 
   <% unless current_user.address.present? %>
     <fieldset>
