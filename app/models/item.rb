@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_many :pickups
-  has_one :active_pickup, -> { where(status: [:pending, :completed]) }, class_name: "Pickup"
+  has_one :active_pickup, -> { where(status: [:Pending, :Completed]) }, class_name: "Pickup"
   has_one_attached :photo
   validates :photo, :title, :start_pickup_at, :end_pickup_at, presence: true
 
