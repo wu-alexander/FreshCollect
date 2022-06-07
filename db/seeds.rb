@@ -52,12 +52,12 @@ user4 = User.create!(
   exchanges: 8
 )
 
-user4_file = File.open("db/support/items/profile_pic_diego.jpeg")
-user4.photo.attach(io: user4_file, filename: "profile_pic_diego.jpeg")
+user4_file = File.open("db/support/items/profile_pic_diego.png")
+user4.photo.attach(io: user4_file, filename: "profile_pic_diego.png")
 user4.save!
 
 initial_mexican_user = User.create!(
-  email: "mexican@user.com",
+  email: "nadia@user.com",
   password: "123456",
   first_name: "Nadia",
   last_name: "Angulo",
@@ -117,7 +117,7 @@ vegetables = Item.new(
   title: "Mix of roast vegetables + 2 Avocados",
   description: "1 large broccoli head, 3 paprika, 2 sweet potatoes and 2 large ripe avocados",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
-  end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
+end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.20..19.60),
   longitude: rand(-99.30..-98.90)
 )
@@ -139,3 +139,17 @@ image_path = "db/support/items/groceries2.jpeg"
 downloaded_image = File.open(image_path)
 potato.photo.attach(io: downloaded_image, filename: "potato-#{potato.id}")
 potato.save
+
+cans = Item.new(
+  user: initial_mexican_user,
+  title: "Assorted canned food",
+  description: "Lots of canned food and soups - I'm moving out soon so please take them!",
+  start_pickup_at: DateTime.strptime("06/11/2022 8:00", "%m/%d/%Y %H:%M"),
+  end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
+  latitude: rand(19.20..19.60),
+  longitude: rand(-99.30..-98.90)
+)
+image_path = "db/support/items/groceries4.jpg"
+downloaded_image = File.open(image_path)
+cans.photo.attach(io: downloaded_image, filename: "cans-#{cans.id}")
+cans.save
