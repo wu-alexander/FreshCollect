@@ -9,7 +9,6 @@ user1 = User.create!(
   address: "Av. Álvaro Obregón 212, Roma, CDMX",
   exchanges: 21
 )
-
 user1_file = File.open("db/support/items/profile_pic_fiona.jpg")
 user1.photo.attach(io: user1_file, filename: "profile_pic_fiona.jpg")
 user1.save!
@@ -23,7 +22,6 @@ user2 = User.create!(
   address: "Av. Insurgentes Sur 432, Hipódromo, Cuauhtémoc, 06760 Ciudad de México, CDMX, Mexico",
   exchanges: 24
 )
-
 user2_file = File.open("db/support/items/profile_pic_alex.jpg")
 user2.photo.attach(io: user2_file, filename: "profile_pic_alex.jpg")
 user2.save!
@@ -37,7 +35,6 @@ user3 = User.create!(
   address: "Av. Álvaro Obregón 298, Colonia Condesa, Cuauhtémoc, 06140 Ciudad de México, CDMX, Mexico",
   exchanges: 15
 )
-
 user3_file = File.open("db/support/items/profile_pic_caio.jpeg")
 user3.photo.attach(io: user3_file, filename: "profile_pic_caio.jpeg")
 user3.save!
@@ -51,12 +48,11 @@ user4 = User.create!(
   address: "Álvaro Obregón 154 Primer piso, Roma Nte., 06700 Ciudad de México, CDMX, Mexico",
   exchanges: 8
 )
-
 user4_file = File.open("db/support/items/profile_pic_diego.png")
 user4.photo.attach(io: user4_file, filename: "profile_pic_diego.png")
 user4.save!
 
-initial_mexican_user = User.create!(
+user5 = User.create!(
   email: "nadia@user.com",
   password: "123456",
   first_name: "Nadia",
@@ -65,12 +61,11 @@ initial_mexican_user = User.create!(
   address: "Av. Álvaro Obregón 195, Roma, CDMX",
   exchanges: 13
 )
+user5_file = File.open("db/support/items/profile_pic_nadia.jpg")
+user5.photo.attach(io: user5_file, filename: "profile_pic_nadia.jpg")
+user5.save!
 
-initial_mexican_file = File.open("db/support/items/profile_pic_nadia.jpg")
-initial_mexican_user.photo.attach(io: initial_mexican_file, filename: "profile_pic_nadia.jpg")
-initial_mexican_user.save!
-
-initial_swiss_user = User.create!(
+user6 = User.create!(
   email: "sina@gmail.com",
   password: "123456",
   first_name: "Sina",
@@ -79,19 +74,18 @@ initial_swiss_user = User.create!(
   address: "Stationsstrasse 56, 8003 Zurich",
   exchanges: 17
 )
-
-initial_swiss_file = File.open("db/support/items/profile_pic_sina.jpg")
-initial_swiss_user.photo.attach(io: initial_swiss_file, filename: "profile_pic_sina.jpg")
-initial_swiss_user.save!
+user6_file = File.open("db/support/items/profile_pic_sina.jpg")
+user6.photo.attach(io: user6_file, filename: "profile_pic_sina.jpg")
+user6.save!
 
 bread = Item.new(
   user: user1,
-  title: "Two loafs of bread",
+  title: "Two loaves of bread",
   description: "Sliced square white sandwich bread loaf and a one classic nordic whole-grain rye bread.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/12/2022 20:00", "%m/%d/%Y %H:%M"),
-  latitude: rand(19.20..19.60),
-  longitude: rand(-99.30..-98.90)
+  latitude: rand(19.400..19.430),
+  longitude: rand(-99.180..-99.150)
 )
 image_path = "db/support/items/groceries3.jpeg"
 downloaded_image = File.open(image_path)
@@ -100,12 +94,12 @@ bread.save
 
 garlic = Item.new(
   user: user2,
-  title: "Garlic, peppers, tomatos",
+  title: "Garlic, peppers, tomatoes",
   description: "Some leftover produce I won't get to. Please take it.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
-  latitude: rand(19.20..19.60),
-  longitude: rand(-99.30..-98.90)
+  latitude: rand(19.400..19.430),
+  longitude: rand(-99.180..-99.150)
 )
 image_url = "https://source.unsplash.com/AeKuux5keaU"
 downloaded_image = URI.open(image_url)
@@ -114,12 +108,12 @@ garlic.save
 
 vegetables = Item.new(
   user: user3,
-  title: "Mix of roast vegetables + 2 Avocados",
-  description: "1 large broccoli head, 3 paprika, 2 sweet potatoes and 2 large ripe avocados",
+  title: "Mix of vegetables + 2 Avocados",
+  description: "1 large broccoli head, 2 sweet potatoes and 2 large ripe avocados",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
-end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
-  latitude: rand(19.20..19.60),
-  longitude: rand(-99.30..-98.90)
+  end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
+  latitude: rand(19.400..19.430),
+  longitude: rand(-99.180..-99.150)
 )
 image_path = "db/support/items/groceries.jpeg"
 downloaded_image = File.open(image_path)
@@ -132,8 +126,8 @@ potato = Item.new(
   description: "Bag of small potatoes purchased a couple weeks ago",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
-  latitude: rand(19.20..19.60),
-  longitude: rand(-99.30..-98.90)
+  latitude: rand(19.400..19.430),
+  longitude: rand(-99.180..-99.150)
 )
 image_path = "db/support/items/groceries2.jpeg"
 downloaded_image = File.open(image_path)
@@ -141,13 +135,13 @@ potato.photo.attach(io: downloaded_image, filename: "potato-#{potato.id}")
 potato.save
 
 cans = Item.new(
-  user: initial_mexican_user,
+  user: user5,
   title: "Assorted canned food",
   description: "Lots of canned food and soups - I'm moving out soon so please take them!",
   start_pickup_at: DateTime.strptime("06/11/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
-  latitude: rand(19.20..19.60),
-  longitude: rand(-99.30..-98.90)
+  latitude: rand(19.400..19.430),
+  longitude: rand(-99.180..-99.150)
 )
 image_path = "db/support/items/groceries4.jpg"
 downloaded_image = File.open(image_path)

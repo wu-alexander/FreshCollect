@@ -1,16 +1,12 @@
 <div data-controller="notifications" class="dropdown-menu">
-  <%#= render "notifications/notification",
-             notification: Notification.where(type: "PickupNotification").last.to_notification %>
   <div class="list-group">
     <% if current_user.notifications.any? %>
       <% current_user.notifications.each do |notice| %>
         <%  notification = notice.to_notification %>
-        <%= link_to notification.path do %>
-          <%= notification.text %>
-        <% end %>
+        <%= render "notifications/static_notification", notification: notification %>
       <% end %>
     <% else %>
-      <li class="px-3">No Notifications yet</li>
+      <li class="p-3">No notifications yet</li>
     <% end %>
   </div>
 </div>

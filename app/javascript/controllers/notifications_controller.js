@@ -7,7 +7,7 @@ export default class extends Controller {
     consumer.subscriptions.create("Noticed::NotificationChannel", {
       received: (data) => {
         console.log(data);
-        this.element.insertAdjacentHTML("beforeEnd", data.popup_html)
+        document.body.insertAdjacentHTML("beforeEnd", data.popup_html)
       }
     })
   }

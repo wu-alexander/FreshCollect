@@ -16,13 +16,34 @@
 }
 
 .slideup-notification {
-  background-color: #E08E44;
   position: fixed;
-  top: 0;
+  top: 2.5vh;
+  width: 90vw;
+  left: 5vw;
   animation-name: slideup;
   animation-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation-direction: normal;
   opacity: 0;
   animation-duration: 7s;
   animation-iteration-count: 1;
+
+  .toast {
+    background-color: #fff;
+  }
+}
+
+.mobile-menu {
+  .dropdown-menu.show {
+    bottom: 65px !important;
+    width: 90vw;
+    left: 5vw !important;
+    position: fixed !important;
+    transform: none !important;
+    padding: 0;
+  }
+
+  .toast {
+    width: 100%;
+    box-shadow: none;
+  }
 }

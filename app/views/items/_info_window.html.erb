@@ -1,7 +1,9 @@
-<div class="p-1">
-  <h6><%= item.title %></h6>
-    <div class="m-1">
-    <%= cl_image_tag item.photo_or_default, height: 50, width: 100, crop: :fill %>
-    </div>
-    <h6><%= link_to "See details", item_path(item) %></h6>
+<div class="row g-0">
+  <div class="col-3">
+    <%= cl_image_tag item.photo_or_default, height: 210, width: 120, crop: :fill, class: "img-fluid" %>
+  </div>
+  <div class="col-9 p-3 d-flex flex-column justify-content-between">
+    <h6 class="text-start"><%= item.title %></h6>
+    <p class="text-end mb-0"><%= link_to "See details", item_path(item), class: "stretched-link" %></p>
+  </div>
 </div>

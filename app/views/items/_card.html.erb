@@ -1,10 +1,11 @@
-<div class="card-food mb-2 ">
+<div class="card-food mb-2 position-relative">
   <%= cl_image_tag item.photo_or_default, height: 400, width: 640, crop: :fill %>
+  <%= link_to '', item, class: "stretched-link" %>
   <div class="card-food-infos">
     <div>
       <h2><%= item.title %></h2>
       <p><%= item.description %></p>
-      <%= link_to 'Show details', item %>
+      <%= link_to 'See details', item, class: "stretched-link" %>
     </div>
     <h2 class="card-food-pricing"></h2>
     <%= cl_image_tag item.user.photo_or_default, height: 40, width: 40, crop: :fill, class: "card-food-user avatar-bordered" %>
