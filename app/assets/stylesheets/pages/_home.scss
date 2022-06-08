@@ -13,17 +13,28 @@
 #text-subheader {
   color: #74896D;
   text-shadow: 0.5px 0.5px white;
+  margin-left: 9px;
 }
 
 #Fresh {
   color: #E08E44;
   text-shadow: 0.5px 0.5px white;
   font-size: 60px;
+  margin-bottom: -20px;
 }
-
 
 #Collect {
   color: #D76834;
   text-shadow: 0.5px 0.5px white;
   font-size: 60px;
+}
+
+#Welcome-title {
+  text-shadow: 0.5px 0.5px white;
+  text-align: center;
+}
+
+#Welcome-text{
+  text-align: left;
+
 }
