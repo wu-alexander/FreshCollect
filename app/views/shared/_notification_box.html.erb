@@ -5,9 +5,7 @@
     <% if current_user.notifications.any? %>
       <% current_user.notifications.each do |notice| %>
         <%  notification = notice.to_notification %>
-        <%= link_to notification.path do %>
-          <%= notification.text %>
-        <% end %>
+        <%= render "notifications/static_notification", notification: notification %>
       <% end %>
     <% else %>
       <li class="px-3">No Notifications yet</li>

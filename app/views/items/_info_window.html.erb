@@ -1,3 +1,9 @@
-<h5><%= item.title %></h5>
-<p><%= item.user_address %></p>
-<p><%= link_to "See details", item_path(item) %></p>
+<div class="row g-0">
+  <div class="col-3">
+    <%= cl_image_tag item.photo_or_default, height: 210, width: 120, crop: :fill, class: "img-fluid" %>
+  </div>
+  <div class="col-9 p-3 d-flex flex-column justify-content-between">
+    <h6 class="text-start"><%= item.title %></h6>
+    <p class="text-end mb-0"><%= link_to "See details", item_path(item), class: "stretched-link" %></p>
+  </div>
+</div>

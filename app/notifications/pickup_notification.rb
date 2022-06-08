@@ -5,6 +5,9 @@ class PickupNotification < Noticed::Base
   param :pickup
 
   def text
+    "Yay! #{pickup.item.title} now scheduled for pickup!"
+    
+  def popup_text
     "Yay! Your #{pickup.item.title} has just been booked!"
   end
 
@@ -18,7 +21,7 @@ class PickupNotification < Noticed::Base
 
   def to_websocket
     {
-      popup_html: ApplicationController.render(partial: "notifications/notification", locals: { notification: self })
+      popup_html: ApplicationController.render(partial: "notifications/popup_notification", locals: { notification: self })
     }
   end
 end

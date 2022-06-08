@@ -1,13 +1,16 @@
-<div class="home-banner pb-5" style="background-color: #74896D;">
-  <div class="text-center pt-3">
-    <h1>All items available</h1>
-  </div>
-  <div class="m-2" style="width: 100%; height: 300px;"
+<div class="home-banner" style="background-color: #74896D;">
+  <div style="width: 100%; height: 350px; position: sticky; top: 0; margin-bottom: -1.5rem"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="container">
+  <div class="container position-relative bg-white pt-3 dp-8" style="z-index: 8; border-radius: 1.5rem 1.5rem 0 0">
+    <div class="text-center">
+    <%= image_tag 'grey-dash.png', width: 48, height: 8 %>
+   <div class="p-2">
+    <h2>All available items</h2>
+    </div>
+    </div>
     <% @items.each do |item| %>
       <%= render "items/card", item: item %>
     <% end %>
