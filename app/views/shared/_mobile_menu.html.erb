@@ -22,9 +22,10 @@
   </div>
 
   <div class="icons">
-    <%= link_to user_path(current_user) do %>
+    <%= link_to user_path(current_user), "data-bs-toggle": "modal", "data-bs-target": "#profile" do %>
       <%= image_tag "Profile-new.png", width: 25, height: 25 %>
     <% end %>
     <p class="small mb-0">Profile</p>
   </div>
 </div>
+<%= render "users/profile_modal", user: current_user %>

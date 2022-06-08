@@ -1,0 +1,23 @@
+<div class="modal fade" id="profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="home-banner pb-5 bg-leave-image dp-4">
+            <div class="text-end pt-3 pe-3">
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light btn-sm" %>
+            </div>
+          <div class="card-body pt-5">
+            <div class="text-center show-card dp-8" style="background: rgba(255,255,255,0.9)">
+              <div><%= cl_image_tag user.photo_or_default, height: 100, width: 100, crop: :fill, class: 'rounded-circle m-3 dp-3' %></div>
+              <h6 class="card-subtitle mb-2 text-muted"><%= user.first_name %> <%= user.last_name %></h6>
+              <h6 class="card-subtitle mb-2 text-muted"><%= user.address %></h6>
+              <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-at"></i> <%= user.email %></h6>
+              <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-phone"></i> <%= user.phone_number %></h6>
+              <%= link_to "Edit profile", edit_user_path(user), class: 'btn btn-primary btn-sm m-4 text-white dp-8' if user == user %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
