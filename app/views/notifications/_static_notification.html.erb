@@ -1,3 +1,14 @@
-<%= link_to notification.path, class: "static-notification d-block text-center py-3 px-5 border text-decoration-none text-dark list-group-item", role: "alert" do %>
-  <%= notification.text %>
+<%= link_to notification.path, class: "static-notification text-decoration-none" do %>
+  <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <div class="pe-2">
+        <%= icon *notification.icon_keys, class: "text-secondary" %>
+      </div>
+      <strong class="me-auto"><%= notification.title %></strong>
+      <small><%= notification.extra_info %></small>
+    </div>
+    <div class="toast-body text-dark">
+      <%= sanitize(notification.text) %>
+    </div>
+  </div>
 <% end %>

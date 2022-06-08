@@ -1,19 +1,33 @@
 class PickupNotification < Noticed::Base
+  include ActionView::Helpers::DateHelper
+
   deliver_by :database
   deliver_by :action_cable, format: :to_websocket
 
   param :pickup
 
   def text
-    "Yay! #{pickup.item.title} now scheduled for pickup!"
+    <<-HTML
+      Your #{pickup.item.title} now scheduled for
+      pickup on <strong class="fw-bolder">#{pickup.relative_pickup_date}
+      at #{pickup.arrive_at.strftime('%H')}#{pickup.arrive_at.strftime('%p').downcase}</strong>!
+    HTML
   end
 
-  def popup_text
-    "Yay! Your #{pickup.item.title} has just been booked!"
+  def extra_info
+    "in #{distance_of_time_in_words_to_now(pickup.arrive_at)}"
+  end
+
+  def title
+    "Pickup scheduled"
+  end
+
+  def icon_keys
+    ["fas", "seedling"]
   end
 
   def path
-    pickup
+    :dashboard
   end
 
   def pickup

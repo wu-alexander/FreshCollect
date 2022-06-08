@@ -15,6 +15,9 @@
   <body class="main">
     <%= render 'shared/navbar' unless current_user.present? || devise_controller? %>
     <%= render 'shared/flashes' %>
+    <%#= render "notifications/popup_notification",
+      notification: Notification.where(type: "PickupNotification").last.to_notification %>
+
     <div class="flex-grow-1">
       <%= yield %>
     </div>

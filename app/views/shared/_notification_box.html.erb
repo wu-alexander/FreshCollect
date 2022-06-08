@@ -1,6 +1,4 @@
 <div data-controller="notifications" class="dropdown-menu">
-  <%#= render "notifications/notification",
-             notification: Notification.where(type: "PickupNotification").last.to_notification %>
   <div class="list-group">
     <% if current_user.notifications.any? %>
       <% current_user.notifications.each do |notice| %>
