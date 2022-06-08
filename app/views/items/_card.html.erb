@@ -5,7 +5,7 @@
     <div>
       <h2><%= item.title %></h2>
       <p><%= item.description %></p>
-      <%= link_to 'Show details', item, class: "stretched-link" %>
+      <%= link_to 'See details', item, class: "stretched-link" %>
     </div>
     <h2 class="card-food-pricing"></h2>
     <%= cl_image_tag item.user.photo_or_default, height: 40, width: 40, crop: :fill, class: "card-food-user avatar-bordered" %>

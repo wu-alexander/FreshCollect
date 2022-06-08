@@ -5,7 +5,6 @@
       <button class="nav-link active" id="nav-listing-tab" data-bs-toggle="tab"
       data-bs-target="#nav-listing" type="button" role="tab" aria-controls="nav-listing" aria-selected="true">
       Listings</button>
-
       <button class="nav-link" id="nav-pickup-tab" data-bs-toggle="tab"
       data-bs-target="#nav-pickup" type="button" role="tab" aria-controls="nav-pickup" aria-selected="true">
       Pickups</button>
@@ -16,7 +15,11 @@
       <% @dashboard.sharer_items.each do |item| %>
         <div class="card p-3">
           <%= cl_image_tag item.photo_or_default, height: 100, width: 180, crop: :fill %>
-          <%= item.title %>
+          <%= item.title %><br>
+          <%= item.status %>
+          <% if item.status == "Pending" %>
+            (pickup by <%= item.active_pickup.user.first_name %>)
+          <% end %>
           <%= link_to "See details", item_path(item) %>
         </div>
       <% end %>
@@ -25,7 +28,11 @@
       <% @dashboard.collector_pickups.each do |pickup| %>
         <div class="card p-3">
           <%= cl_image_tag pickup.item.photo_or_default, height: 100, width: 180, crop: :fill %>
-          <%= pickup.item.title %>
+          <%= pickup.item.title %><br>
+          <%= pickup.status %>
+          <% if pickup.status == "Pending" %>
+            (pickup from <%= pickup.item.user.first_name %>)
+          <% end %>
           <%= link_to "See details", pickup_path(pickup) %>
         </div>
       <% end %>
