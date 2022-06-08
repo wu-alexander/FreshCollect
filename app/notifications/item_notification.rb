@@ -4,6 +4,8 @@
 # ItemNotification.with(post: @post).deliver(current_user)
 
 class ItemNotification < Noticed::Base
+  include ActionView::Helpers::DateHelper
+
   deliver_by :database
   deliver_by :action_cable, format: :to_websocket
 
