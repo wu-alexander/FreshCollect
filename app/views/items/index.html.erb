@@ -4,15 +4,34 @@
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="container position-relative bg-white pt-3 dp-8" style="z-index: 8; border-radius: 1.5rem 1.5rem 0 0">
-    <div class="text-center">
-    <%= image_tag 'grey-dash.png', width: 48, height: 8 %>
-   <div class="p-2">
-    <h2>All available items</h2>
-    </div>
-    </div>
-    <% @items.each do |item| %>
-      <%= render "items/card", item: item %>
+  <div class="container position-relative bg-white pt-3 dp-8" style="z-index: 8; border-radius: 1.5rem 1.5rem 0 0; min-height: 50vh; display: flex; flex-direction: column">
+    <% if @items.any? %>
+      <div class="text-center">
+        <%= image_tag 'grey-dash.png', width: 48, height: 8 %>
+        <div class="p-2">
+          <h2>All available items</h2>
+        </div>
+      </div>
+      <% @items.each do |item| %>
+        <%= render "items/card", item: item %>
+      <% end %>
+    <% else %>
+      <div class="text-center">
+        <%= image_tag 'grey-dash.png', width: 48, height: 8 %>
+        <div class="p-2">
+          <h2>Nothing around you :(</h2>
+        </div>
+      </div>
+      <div class="p-3 flex-grow-1">
+        <p>
+          Sorry :(
+          Fresh Collect doesn't have any items around your address.
+          Are you still around: <%= current_user.address %>.
+        </p>
+        <p>
+          Why don't share Fresh Collect with your friends?
+        </p>
+      </div>
     <% end %>
   </div>
 </div>
