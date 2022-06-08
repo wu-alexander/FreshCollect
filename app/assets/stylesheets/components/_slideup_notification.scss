@@ -39,5 +39,11 @@
     left: 5vw !important;
     position: fixed !important;
     transform: none !important;
+    padding: 0;
+  }
+
+  .toast {
+    width: 100%;
+    box-shadow: none;
   }
 }
