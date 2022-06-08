@@ -1,7 +1,7 @@
 <%= simple_form_for [ item, pickup ] do |f| %>
   <%= f.label :arrive_at, "When do you want to make your pickup?" %>
   <div class="input-group">
-    <%= f.input :arrive_at, html5: true, label: false, wrapper_html: { class: "flex-grow-1", style: "margin-bottom: 0 !important  " }, input_html: { class: "mb-0" } %>
+    <%= f.input :arrive_at, html5: true, label: false, wrapper_html: { class: "flex-grow-1", style: "margin-bottom: 0 !important  " }, input_html: { class: "mb-0", min: DateTime.current.strftime("%Y-%m-%dT%H:%m") } %>
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

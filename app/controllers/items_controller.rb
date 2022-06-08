@@ -4,13 +4,25 @@ class ItemsController < ApplicationController
 
   def index
     @items = current_user&.geocoded? ? Item.near(current_user, 50) : Item.all
-    @markers = @items.geocoded.map do |item|
-      {
-        lat: item.latitude,
-        lng: item.longitude,
-        image_url: helpers.asset_url("icon.png"),
-        info_window: render_to_string(partial: "info_window", locals: { item: item })
-      }
+
+    if @items.any?
+      @markers = @items.geocoded.map do |item|
+        {
+          lat: item.latitude,
+          lng: item.longitude,
+          image_url: helpers.asset_url("icon.png"),
+          info_window: render_to_string(partial: "info_window", locals: { item: item })
+        }
+      end
+    else
+      @markers = [
+        {
+          lat: current_user.latitude,
+          lng: current_user.longitude,
+          image_url: helpers.asset_url("avatar.png"),
+          info_window: render_to_string(partial: "info_window", locals: { item: Item.last })
+        }
+      ]
     end
   end
 
