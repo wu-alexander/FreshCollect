@@ -6,7 +6,8 @@ class PickupNotification < Noticed::Base
 
   def text
     "Yay! #{pickup.item.title} now scheduled for pickup!"
-    
+  end
+
   def popup_text
     "Yay! Your #{pickup.item.title} has just been booked!"
   end
