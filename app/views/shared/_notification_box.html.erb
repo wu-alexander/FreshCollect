@@ -1,12 +1,12 @@
-<div data-controller="notifications" class="dropdown-menu">
-  <div class="list-group">
+<div class="dropdown-menu">
+  <div class="list-group" data-notifications-target="list">
     <% if current_user.notifications.any? %>
       <% current_user.notifications.each do |notice| %>
         <%  notification = notice.to_notification %>
         <%= render "notifications/static_notification", notification: notification %>
       <% end %>
     <% else %>
-      <li class="p-3">No notifications yet</li>
+      <p class="p-3 mb-0 js-no-items">No notifications yet</p>
     <% end %>
   </div>
 </div>

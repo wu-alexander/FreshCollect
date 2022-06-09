@@ -10,7 +10,7 @@ class PickupNotification < Noticed::Base
     <<-HTML
       Your #{pickup.item.title} now scheduled for
       pickup on <strong class="fw-bolder">#{pickup.relative_pickup_date}
-      at #{pickup.arrive_at.strftime('%H')}#{pickup.arrive_at.strftime('%p').downcase}</strong>!
+      at #{pickup.arrive_at.strftime('%l')}#{pickup.arrive_at.strftime('%p').downcase}</strong>!
     HTML
   end
 
@@ -36,7 +36,9 @@ class PickupNotification < Noticed::Base
 
   def to_websocket
     {
-      popup_html: ApplicationController.render(partial: "notifications/popup_notification", locals: { notification: self })
+      static_html: ApplicationController.render(partial: "notifications/static_notification", locals: { notification: self }),
+      popup_html: ApplicationController.render(partial: "notifications/popup_notification", locals: { notification: self }),
+      notification_count: recipient.notifications.size
     }
   end
 end

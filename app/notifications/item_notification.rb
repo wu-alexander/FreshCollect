@@ -13,7 +13,9 @@ class ItemNotification < Noticed::Base
 
   def text
     <<-HTML
-    "#{item.user.first_name} just listed <strong class="fw-bolder">#{item.title}</strong> near you!"
+      #{item.user.first_name} just listed
+      <strong class="fw-bolder">#{item.title}</strong>
+      near you!
     HTML
   end
 
@@ -39,7 +41,9 @@ class ItemNotification < Noticed::Base
 
   def to_websocket
     {
-      popup_html: ApplicationController.render(partial: "notifications/popup_notification", locals: { notification: self })
+      static_html: ApplicationController.render(partial: "notifications/static_notification", locals: { notification: self }),
+      popup_html: ApplicationController.render(partial: "notifications/popup_notification", locals: { notification: self }),
+      notification_count: recipient.notifications.size
     }
   end
 end
