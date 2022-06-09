@@ -19,6 +19,7 @@
           <%= item.status %>
           <% if item.status == "Pending" %>
             (pickup by <%= item.active_pickup.user.first_name %>)
+            <%= link_to "Mark as complete", pickup_mark_path(item.active_pickup), method: :patch %>
           <% end %>
           <%= link_to "See details", item_path(item) %>
         </div>

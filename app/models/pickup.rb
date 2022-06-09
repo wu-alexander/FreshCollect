@@ -13,4 +13,8 @@ class Pickup < ApplicationRecord
       arrive_at.strftime("%b %d")
     end
   end
+
+  def completed!
+    update_attribute :status, "Completed"
+  end
 end
