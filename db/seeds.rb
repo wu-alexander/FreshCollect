@@ -80,8 +80,8 @@ user6.save!
 
 bread = Item.new(
   user: user1,
-  title: "One loave of bread",
-  description: "Sliced wholeweat bread loaf from local Bakery.",
+  title: "One loaf of bread",
+  description: "Sliced whole wheat bread from a local bakery",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/12/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
@@ -94,8 +94,8 @@ bread.save
 
 garlic = Item.new(
   user: user2,
-  title: "Tomato can, one lemon, Tzatziki",
-  description: "Some leftover produce I won't get to. Please take it.",
+  title: "Can of tomatoes, one lemon, tzatziki",
+  description: "Some leftover stuff I won't get to. Please take it.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
@@ -108,8 +108,8 @@ garlic.save
 
 vegetables = Item.new(
   user: user3,
-  title: "Balsamic Vinegar, eggs & milk chocolate",
-  description: "Three organic courgettes, two ripe bananas and one large pomegrenate",
+  title: "Balsamic vinegar, eggs & milk chocolate",
+  description: "Three organic courgettes, two ripe bananas and one large pomegranate",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
@@ -123,7 +123,7 @@ vegetables.save
 potato = Item.new(
   user: user4,
   title: "Bag of organic potatoes",
-  description: "Bag of small potatoes purchased a couple weeks ago on farmers market.",
+  description: "Bag of small potatoes purchased a couple weeks ago at the farmers market",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
@@ -136,7 +136,7 @@ potato.save
 
 cans = Item.new(
   user: user5,
-  title: "Three Cans Amy's organic Chilli mix",
+  title: "Three cans of Amy's organic chili",
   description: "Three cans of red beans and tofu soup - I'm moving out soon so please take them!",
   start_pickup_at: DateTime.strptime("06/11/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
