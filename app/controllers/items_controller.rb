@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @items = current_user&.geocoded? ? Item.near(current_user, 50) : Item.all
+    @items = current_user&.geocoded? ? Item.near(current_user, 50).where.missing(:pickups) : Item.where.missing(:pickups)
 
     if @items.any?
       @markers = @items.geocoded.map do |item|

@@ -23,9 +23,15 @@ class PickupsController < ApplicationController
     end
   end
 
+  def mark
+    @pickup = Pickup.find(params[:pickup_id])
+    @pickup.completed!
+    redirect_to dashboard_path
+  end
+
   private
 
   def pickup_params
-    params.require(:pickup).permit(:arrive_at, :photo)
+    params.require(:pickup).permit(:arrive_at, :photo, :status)
   end
 end
