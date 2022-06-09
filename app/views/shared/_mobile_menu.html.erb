@@ -14,8 +14,11 @@
   </div>
 
   <div class="icons dropup">
-    <%= link_to "#", "data-bs-toggle": "dropdown", "aria-expanded": false do %>
+    <%= link_to "#", "data-bs-toggle": "dropdown", "aria-expanded": false, class: "position-relative" do %>
       <%= image_tag "Notifications-new.png", width: 25, height: 25 %>
+      <% unless current_user.notifications.any? %>
+        <span class="badge notification-badge bg-primary position-absolute rounded-pill"><%= current_user.notifications.size %></span>
+      <% end %>
     <% end %>
     <%= render "shared/notification_box" %>
      <p class="small mb-0">Notifications</p>

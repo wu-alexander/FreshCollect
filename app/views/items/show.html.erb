@@ -1,3 +1,45 @@
+<div class="">
+  <%= cl_image_tag @item.photo_or_default, width: 640, height: 320, crop: :fill, class: "img-fluid mb-3" %>
+</div>
+
+<div class="text-center show-card container">
+  <h3 id="item-title"><%= @item.title %></h3>
+  <div class="m-2">
+  </div>
+  <h6 id="item-description"> <%= @item.description %></h6>
+
+  <div class="row">
+    <div class="col-6 text-start">
+      <%= current_user.distance_to(@item).round(1) %>kms
+    </div>
+    <div class="col-6 text-end">
+      <i class="fas fa-calendar-alt"></i> Latest pickup on <%= @item.end_pickup_at.to_time.strftime('%B %e at %l:%M %p') %>
+    </div>
+  </div>
+</div>
+
+<%= link_to "Edit", edit_item_path if @item.user == current_user %> <%= link_to "Delete", item_path(@item), method: :delete, data: { confirm: "Are you sure?" } if @item.user == current_user %>
+
+
+
+<!-- Button trigger modal -->
+<div class="container position-relative d-flex align-items-center justify-content-center p-5" role= "button" data-bs-toggle="modal" data-bs-target="#mapModal">
+  <%= image_tag "icon.png", width: 60, height: 60, class: "position-absolute p-3 rounded-circle", style: "background-color: rgba(253, 230, 230, 0.8); box-sizing: content-box" %>
+  <%= image_tag(
+    "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/#{@item.longitude},#{@item.latitude},14.25,0,0/390x300?access_token=#{ENV['MAPBOX_API_KEY']}",
+    class: "img-fluid",
+  ) %>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="m-1" style="width: 100%; height: 300px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
 <div class="home-banner pb-5" style="background-color: #74896D;">
  <div class="text-center pt-3">
   <h1>Now available in your neighbourhood!</h1>
@@ -21,5 +63,14 @@
      data-controller="mapbox"
      data-mapbox-markers-value="<%= @markers.to_json %>"
      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
     </div>
 </div>
+
+
+
+ <div class="p-3 mb-2" style="background: #E08E44">
+        <h2><b>Get the groceries!</b></h2>
+        <%= render "pickups/form", item: @item, pickup: @pickup %>
+      </div>
+  </div>
