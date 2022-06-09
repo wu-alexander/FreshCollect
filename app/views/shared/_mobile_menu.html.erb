@@ -13,12 +13,12 @@
     <p class="small mb-0">Dashboard</p>
   </div>
 
-  <div class="icons dropup">
+  <div class="icons dropup" data-controller="notifications">
     <%= link_to "#", "data-bs-toggle": "dropdown", "aria-expanded": false, class: "position-relative" do %>
       <%= image_tag "Notifications-new.png", width: 25, height: 25 %>
-      <% unless current_user.notifications.any? %>
-        <span class="badge notification-badge bg-primary position-absolute rounded-pill"><%= current_user.notifications.size %></span>
-      <% end %>
+      <span data-notifications-target="countDisplay" class="<%= current_user.notifications.any? ? '' : 'd-none' %> badge notification-badge bg-primary position-absolute rounded-pill">
+        <%= current_user.notifications.size %>
+      </span>
     <% end %>
     <%= render "shared/notification_box" %>
      <p class="small mb-0">Notifications</p>

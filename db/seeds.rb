@@ -80,70 +80,70 @@ user6.save!
 
 bread = Item.new(
   user: user1,
-  title: "Two loaves of bread",
-  description: "Sliced square white sandwich bread loaf and a one classic nordic whole-grain rye bread.",
+  title: "One loave of bread",
+  description: "Sliced wholeweat bread loaf from local Bakery.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/12/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
   longitude: rand(-99.180..-99.150)
 )
-image_path = "db/support/items/groceries3.jpeg"
+image_path = "db/support/items/groceries6.jpg"
 downloaded_image = File.open(image_path)
 bread.photo.attach(io: downloaded_image, filename: "bread-#{bread.id}")
 bread.save
 
 garlic = Item.new(
   user: user2,
-  title: "Garlic, peppers, tomatoes",
+  title: "Tomato can, one lemon, Tzatziki",
   description: "Some leftover produce I won't get to. Please take it.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
   longitude: rand(-99.180..-99.150)
 )
-image_url = "https://source.unsplash.com/AeKuux5keaU"
+image_url = "db/support/items/groceries5.jpg"
 downloaded_image = URI.open(image_url)
 garlic.photo.attach(io: downloaded_image, filename: "garlic-#{garlic.id}")
 garlic.save
 
 vegetables = Item.new(
   user: user3,
-  title: "Mix of vegetables + 2 Avocados",
-  description: "1 large broccoli head, 2 sweet potatoes and 2 large ripe avocados",
+  title: "Balsamic Vinegar, eggs & milk chocolate",
+  description: "Three organic courgettes, two ripe bananas and one large pomegrenate",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
   longitude: rand(-99.180..-99.150)
 )
-image_path = "db/support/items/groceries.jpeg"
+image_path = "db/support/items/groceries8.jpg"
 downloaded_image = File.open(image_path)
 vegetables.photo.attach(io: downloaded_image, filename: "vegetables-#{vegetables.id}")
 vegetables.save
 
 potato = Item.new(
   user: user4,
-  title: "Bag of potatoes",
-  description: "Bag of small potatoes purchased a couple weeks ago",
+  title: "Bag of organic potatoes",
+  description: "Bag of small potatoes purchased a couple weeks ago on farmers market.",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/13/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
   longitude: rand(-99.180..-99.150)
 )
-image_path = "db/support/items/groceries2.jpeg"
+image_path = "db/support/items/groceries7.jpg"
 downloaded_image = File.open(image_path)
 potato.photo.attach(io: downloaded_image, filename: "potato-#{potato.id}")
 potato.save
 
 cans = Item.new(
   user: user5,
-  title: "Assorted canned food",
-  description: "Lots of canned food and soups - I'm moving out soon so please take them!",
+  title: "Three Cans Amy's organic Chilli mix",
+  description: "Three cans of red beans and tofu soup - I'm moving out soon so please take them!",
   start_pickup_at: DateTime.strptime("06/11/2022 8:00", "%m/%d/%Y %H:%M"),
   end_pickup_at: DateTime.strptime("06/14/2022 20:00", "%m/%d/%Y %H:%M"),
   latitude: rand(19.400..19.430),
   longitude: rand(-99.180..-99.150)
 )
-image_path = "db/support/items/groceries4.jpg"
+image_path = "db/support/items/groceries9.jpg"
 downloaded_image = File.open(image_path)
 cans.photo.attach(io: downloaded_image, filename: "cans-#{cans.id}")
 cans.save
