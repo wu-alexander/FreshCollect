@@ -2,6 +2,6 @@
   <%= f.label :arrive_at, "When do you want to make your pickup?" %>
   <div class="input-group">
     <%= f.input :arrive_at, html5: true, label: false, wrapper_html: { class: "flex-grow-1", style: "margin-bottom: 0 !important  " }, input_html: { class: "mb-0", min: DateTime.current.strftime("%Y-%m-%dT%H:%m"), value: DateTime.current.strftime("%Y-%m-%dT%H:00") } %>
-    <%= f.submit "Get it!" , class: "btn btn-primary" %>
+    <%= f.submit "Get it!", class: "btn btn-primary text-white" %>
   </div>
 <% end %>
