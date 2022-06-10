@@ -1,12 +1,14 @@
 .bg-tangerine-image {
   background-image: url(asset-path('tangerine.jpg'));
   background-size: cover;
+  height: calc(100vh - 58px);
 }
 
 
 .bg-leave-image {
   background-image: url(asset-path('leave.jpg'));
   background-size: cover;
+  height: calc(100vh - 58px);
 }
 
 
