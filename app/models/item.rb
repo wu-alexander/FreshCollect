@@ -11,6 +11,10 @@ class Item < ApplicationRecord
   # before_create :geocode, unless: :geocoded? # the instance method from geocoder
   before_create :copy_user_coordinates, unless: :geocoded?
 
+  scope :available, -> { where.missing(:pickups) }
+  scope :pending, -> { joins(:pickups).where(pickups: { status: :Pending }) }
+  scope :completed, -> { joins(:pickups).where(pickups: { status: :Completed }) }
+
   def photo_or_default
     photo.attached? ? photo.key : "default_item"
   end
