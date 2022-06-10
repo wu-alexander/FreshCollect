@@ -6,7 +6,9 @@ class User < ApplicationRecord
   has_many :notifications, as: :recipient
 
   geocoded_by :address
-  before_save :geocode, if: :address_changed?
+
+  before_create :geocode, unless: :geocoded?
+  before_update :geocode, if: :address_changed?
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
