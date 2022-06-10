@@ -3,7 +3,8 @@
     <div class="row justify-content-center">
       <div class="col-lg-6">
         <h2>Edit your post</h2>
-          <%= render "form", item: @item %>
+        <%= render "form", item: @item %>
+        <%= link_to "Delete", @item, method: :delete %>
       </div>
     </div>
   </div>
