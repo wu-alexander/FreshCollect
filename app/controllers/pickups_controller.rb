@@ -26,7 +26,7 @@ class PickupsController < ApplicationController
   def mark
     @pickup = Pickup.find(params[:pickup_id])
     @pickup.completed!
-    redirect_to dashboard_path
+    redirect_to dashboard_path(confetti: true)
   end
 
   private

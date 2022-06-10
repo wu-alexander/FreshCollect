@@ -1,3 +1,11 @@
+<% if params[:confetti] %>
+  <canvas
+    class="vh-100 position-fixed w-100"
+    data-controller="confetti"
+    data-action="click->confetti#hide"
+  ></canvas>
+<% end %>
+
 <div class="container my-5">
   <h1 class="pb-2">My Dashboard</h1>
   <nav>
