@@ -7,7 +7,7 @@ user1 = User.create!(
   last_name: "Feichtinger",
   phone_number: "888 326 9937",
   address: "Av. Álvaro Obregón 212, Roma, CDMX",
-  exchanges: 21
+  exchanges: 21,
 )
 user1_file = File.open("db/support/items/profile_pic_fiona.jpg")
 user1.photo.attach(io: user1_file, filename: "profile_pic_fiona.jpg")

@@ -1,7 +1,9 @@
-<%= simple_form_for [ item, pickup ] do |f| %>
-  <%= f.label :arrive_at, "When do you want to make your pickup?" %>
-  <div class="input-group">
-    <%= f.input :arrive_at, html5: true, label: false, wrapper_html: { class: "flex-grow-1", style: "margin-bottom: 0 !important  " }, input_html: { class: "mb-0", min: DateTime.current.strftime("%Y-%m-%dT%H:%m"), value: DateTime.current.strftime("%Y-%m-%dT%H:00") } %>
-    <%= f.submit "Get it!", class: "btn btn-primary text-white mx-1 mt-1" %>
+<%= simple_form_for [ item, pickup ], html: { class: "m-0", data: { controller: "get-it" } } do |f| %>
+  <div style="height: 1px; width: 1px; opacity: 0.01">
+    <%= f.input :arrive_at, html5: true, input_html: { class: "m-0", data: { action: "change->get-it#submit", get_it_target: "dateTimeInput" }, min: DateTime.current.strftime("%Y-%m-%dT%H:%m"), value: DateTime.current.strftime("%Y-%m-%dT%H:00") } %>
   </div>
+  <%= f.submit "Get it!",
+               class: "position-fixed btn btn-primary text-white btn-lg dp-12",
+               "data-action": "click->get-it#selectDateTime",
+               style: "right: 1rem; bottom: calc(58px + 1rem); z-index: 9999" %>
 <% end %>

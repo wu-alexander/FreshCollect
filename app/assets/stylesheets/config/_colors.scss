@@ -12,3 +12,7 @@ $light-gray: #F4F4F4;
 $fc-orange: #D76834;
 $fc-light-green: #74896D;
 $fc-light-orange: #E08E44;
+
+.bg-light-orange {
+  background-color: $fc-light-orange !important;
+}
