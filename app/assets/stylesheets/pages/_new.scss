@@ -1,7 +1,7 @@
 .bg-tangerine-image {
   background-image: url(asset-path('tangerine.jpg'));
   background-size: cover;
-  height: calc(100vh - 58px);
+  min-height: calc(100vh - 58px);
 }
 
 
