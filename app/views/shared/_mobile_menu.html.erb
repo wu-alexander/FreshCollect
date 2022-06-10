@@ -1,34 +1,42 @@
 <div class="mobile-menu dp-4">
-  <div class="icons">
-    <%= link_to root_path, class: "d-block" do %>
-       <%= image_tag "Home-new.png", width: 30, height: 25 %>
-    <% end %>
-    <p class="small mb-0">Home</p>
+  <div class="waves flex-grow-1">
+    <div class="icons">
+      <%= link_to root_path, class: "d-block" do %>
+        <%= image_tag "Home-new.png", width: 30, height: 25 %>
+      <% end %>
+      <p class="small mb-0">Home</p>
+    </div>
   </div>
 
-  <div class="icons">
-    <%= link_to dashboard_path class: "d-block" do %>
-      <%= image_tag "Dashboard-new.png", width: 25, height: 25 %>
-    <% end %>
-    <p class="small mb-0">Dashboard</p>
+  <div class="waves flex-grow-1">
+    <div class="icons">
+      <%= link_to dashboard_path class: "d-block" do %>
+        <%= image_tag "Dashboard-new.png", width: 25, height: 25 %>
+      <% end %>
+      <p class="small mb-0">Dashboard</p>
+    </div>
   </div>
 
-  <div class="icons dropup" data-controller="notifications">
-    <%= link_to "#", "data-bs-toggle": "dropdown", "aria-expanded": false, class: "position-relative" do %>
-      <%= image_tag "Notifications-new.png", width: 25, height: 25 %>
-      <span data-notifications-target="countDisplay" class="<%= current_user.notifications.any? ? '' : 'd-none' %> badge notification-badge bg-primary position-absolute rounded-pill">
-        <%= current_user.notifications.size %>
-      </span>
-    <% end %>
-    <%= render "shared/notification_box" %>
-     <p class="small mb-0">Notifications</p>
+  <div class="waves flex-grow-1">
+    <div class="icons dropup" data-controller="notifications">
+      <%= link_to "#", "data-bs-toggle": "dropdown", "aria-expanded": false, class: "position-relative" do %>
+        <%= image_tag "Notifications-new.png", width: 25, height: 25 %>
+        <span data-notifications-target="countDisplay" class="<%= current_user.notifications.any? ? '' : 'd-none' %> badge notification-badge bg-primary position-absolute rounded-pill">
+          <%= current_user.notifications.size %>
+        </span>
+      <% end %>
+      <%= render "shared/notification_box" %>
+      <p class="small mb-0">Notifications</p>
+    </div>
   </div>
 
-  <div class="icons">
-    <%= link_to user_path(current_user), "data-bs-toggle": "modal", "data-bs-target": "#profile" do %>
-      <%= image_tag "Profile-new.png", width: 25, height: 25 %>
-    <% end %>
-    <p class="small mb-0">Profile</p>
+  <div class="waves flex-grow-1">
+    <div class="icons">
+      <%= link_to user_path(current_user), "data-bs-toggle": "modal", "data-bs-target": "#profile" do %>
+        <%= image_tag "Profile-new.png", width: 25, height: 25 %>
+      <% end %>
+      <p class="small mb-0">Profile</p>
+    </div>
   </div>
 </div>
 <%= render "users/profile_modal", user: current_user %>

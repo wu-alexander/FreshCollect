@@ -17,6 +17,6 @@ import "controllers"
 import "bootstrap"
 
 document.addEventListener("turbolinks:load", () => {
-  Waves.attach('a.btn, .card-food, .mobile-menu .icons, .waves', [])
+  Waves.attach('a.btn, .card-food, .waves', [])
   Waves.init()
 })
