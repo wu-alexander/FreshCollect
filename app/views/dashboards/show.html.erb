@@ -12,8 +12,8 @@
   </nav>
   <div class="tab-content" id="nav-tab-content">
     <div class="tab-pane fade show active" id="nav-listing" role="tabpanel" aria-labelledby="nav-listing-tab">
-      <%= render collection: @dashboard.sharer_items.available, partial: "dashboards/available_item" %>
       <%= render collection: @dashboard.sharer_items.pending, partial: "dashboards/pending_item" %>
+      <%= render collection: @dashboard.sharer_items.available, partial: "dashboards/available_item" %>
       <%= render collection: @dashboard.sharer_items.completed, partial: "dashboards/completed_item" %>
     </div>
     <div class="tab-pane fade p-3" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup-tab">
