@@ -7,6 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import * as Waves from "node-waves"
 
 Rails.start()
 Turbolinks.start()
@@ -14,3 +15,8 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+document.addEventListener("turbolinks:load", () => {
+  Waves.attach('a.btn, .card-food, .mobile-menu .icons, .waves', [])
+  Waves.init()
+})

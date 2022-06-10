@@ -37,11 +37,11 @@
 
 <!-- Button trigger modal -->
 <div class="container position-relative d-flex align-items-center justify-content-center p-5 bg-secondary"role= "button" data-bs-toggle="modal" data-bs-target="#mapModal">
-  <%= image_tag "icon.png", width: 60, height: 60, class: "position-absolute p-3 rounded-circle", style: "background-color: rgba(253, 230, 230, 0.8); box-sizing: content-box" %>
   <%= image_tag(
     "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/#{@item.longitude},#{@item.latitude},14.25,0,0/390x300?access_token=#{ENV['MAPBOX_API_KEY']}",
-    class: "img-fluid rounded",
+    class: "img-fluid rounded waves",
   ) %>
+  <%= image_tag "icon.png", width: 60, height: 60, class: "position-absolute p-3 rounded-circle", style: "background-color: rgba(253, 230, 230, 0.8); box-sizing: content-box" %>
 </div>
 <div class="vh-100 bg-secondary">
 </div>
