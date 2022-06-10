@@ -1,14 +1,16 @@
-<%= image_tag cl_image_path(
+<div
+  class="img-fluid w-100"
+  style="width: 100vw; height: 100vw; background-image: url(<%= cl_image_path(
     @item.photo_or_default,
     width: 640,
     height: 640,
     crop: :fill
-  ),
-  width: 640,
-  height: 640,
-  class: "img-fluid w-100",
-  "data-controller": "upscroll"
-%>
+  ) %>);
+  background-attachment: fixed;
+  background-size: 100vw;
+  "
+  data-controller="upscroll"
+></div>
 <div class="container bg-secondary pt-3" style="color: white; ">
 
   <%= render "pickups/form", item: @item, pickup: @pickup unless @item.user == current_user %>
@@ -40,6 +42,8 @@
     "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/#{@item.longitude},#{@item.latitude},14.25,0,0/390x300?access_token=#{ENV['MAPBOX_API_KEY']}",
     class: "img-fluid",
   ) %>
+</div>
+<div class="vh-100 bg-secondary">
 </div>
 <!-- Modal -->
 <div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
