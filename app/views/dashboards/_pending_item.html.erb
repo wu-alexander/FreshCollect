@@ -1,0 +1,18 @@
+<div class="d-flex align-items-stretch pb-2 border-bottom mb-2 position-relative">
+  <%= image_tag cl_image_path(pending_item.photo_or_default, height: 100, width: 80, crop: :fill), width: 80, class: "object-fit-cover" %>
+  <div class="p-3 d-flex flex-grow-1">
+    <div class="flex-grow-1">
+      <h5 class="mb-0"><%= pending_item.title %></h5>
+      <div class="text-muted">
+        pickup by <%= pending_item.active_pickup.user.first_name %>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex pe-3 flex-column text-end justify-content-center align-items-end">
+    <%= link_to pickup_mark_path(pending_item.active_pickup), method: :patch, style: "z-index: 9; text-decoration: none" do %>
+      <i class="d-block fas fa-check-circle fs-3"></i>
+      <small>Collected?</small>
+    <% end %>
+  </div>
+  <%= link_to "", item_path(pending_item), class: "stretched-link" %>
+</div>

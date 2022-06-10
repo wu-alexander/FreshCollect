@@ -107,7 +107,7 @@ garlic.photo.attach(io: downloaded_image, filename: "garlic-#{garlic.id}")
 garlic.save
 
 vegetables = Item.new(
-  user: user3,
+  user: user1,
   title: "Balsamic vinegar, eggs & milk chocolate",
   description: "Three organic courgettes, two ripe bananas and one large pomegranate",
   start_pickup_at: DateTime.strptime("06/10/2022 8:00", "%m/%d/%Y %H:%M"),
@@ -119,6 +119,11 @@ image_path = "db/support/items/groceries8.jpg"
 downloaded_image = File.open(image_path)
 vegetables.photo.attach(io: downloaded_image, filename: "vegetables-#{vegetables.id}")
 vegetables.save
+vegetables.pickups.create!(
+  status: :Completed,
+  user: user3,
+  arrive_at: rand(vegetables.start_pickup_at..vegetables.end_pickup_at)
+)
 
 potato = Item.new(
   user: user4,

@@ -11,30 +11,27 @@
     </div>
   </nav>
   <div class="tab-content" id="nav-tab-content">
-    <div class="tab-pane fade show active p-3" id="nav-listing" role="tabpanel" aria-labelledby="nav-listing-tab">
-      <% @dashboard.sharer_items.each do |item| %>
-        <div class="card p-3">
-          <%= cl_image_tag item.photo_or_default, height: 100, width: 180, crop: :fill %>
-          <%= item.title %><br>
-          <%= item.status %>
-          <% if item.status == "Pending" %>
-            (pickup by <%= item.active_pickup.user.first_name %>)
-            <%= link_to "Mark as complete", pickup_mark_path(item.active_pickup), method: :patch %>
-          <% end %>
-          <%= link_to "See details", item_path(item) %>
-        </div>
-      <% end %>
+    <div class="tab-pane fade show active" id="nav-listing" role="tabpanel" aria-labelledby="nav-listing-tab">
+      <%= render collection: @dashboard.sharer_items.available, partial: "dashboards/available_item" %>
+      <%= render collection: @dashboard.sharer_items.pending, partial: "dashboards/pending_item" %>
+      <%= render collection: @dashboard.sharer_items.completed, partial: "dashboards/completed_item" %>
     </div>
     <div class="tab-pane fade p-3" id="nav-pickup" role="tabpanel" aria-labelledby="nav-pickup-tab">
       <% @dashboard.collector_pickups.each do |pickup| %>
         <div class="card p-3">
-          <%= cl_image_tag pickup.item.photo_or_default, height: 100, width: 180, crop: :fill %>
-          <%= pickup.item.title %><br>
-          <%= pickup.status %>
-          <% if pickup.status == "Pending" %>
-            (pickup from <%= pickup.item.user.first_name %>)
-          <% end %>
-          <%= link_to "See details", pickup_path(pickup) %>
+          <div class="row g-0">
+            <div class="col-3">
+              <%= cl_image_tag pickup.item.photo_or_default, height: 100, width: 50, crop: :fill %>
+            </div>
+            <div class="col-9 p-3 d-flex flex-column justify-content-between">
+              <%= pickup.item.title %><br>
+              <%= pickup.status %>
+              <% if pickup.status == "Pending" %>
+                (pickup from <%= pickup.item.user.first_name %>)
+              <% end %>
+              <%= link_to "See details", pickup_path(pickup) %>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>

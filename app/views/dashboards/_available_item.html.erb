@@ -1,0 +1,12 @@
+<div class="d-flex align-items-stretch pb-2 border-bottom mb-2 position-relative">
+  <%= image_tag cl_image_path(available_item.photo_or_default, height: 100, width: 80, crop: :fill), width: 80, class: "object-fit-cover" %>
+  <div class="p-3 d-flex flex-grow-1">
+    <div class="flex-grow-1">
+      <h5 class="mb-0"><%= available_item.title %></h5>
+      <div class="text-muted">
+        None has picked this up yet
+      </div>
+    </div>
+  </div>
+  <%= link_to "", item_path(available_item), class: "stretched-link" %>
+</div>
