@@ -1,6 +1,14 @@
-<div class="">
-  <%= cl_image_tag @item.photo_or_default, width: 640, height: 320, crop: :fill, class: "img-fluid" %>
-</div>
+<%= image_tag cl_image_path(
+    @item.photo_or_default,
+    width: 640,
+    height: 640,
+    crop: :fill
+  ),
+  width: 640,
+  height: 640,
+  class: "img-fluid w-100",
+  "data-controller": "upscroll"
+%>
 <div class="container bg-secondary pt-3" style="color: white; ">
 
   <%= render "pickups/form", item: @item, pickup: @pickup unless @item.user == current_user %>
