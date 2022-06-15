@@ -7,6 +7,7 @@ Check out the final result of our app [FreshCollect](http://www.fresh-collect.xy
 <br>
 
 ## Some design impressions
+
 <p align="center">
 <img width="277" alt="screenshot_home" src="https://user-images.githubusercontent.com/100839308/173715135-62635484-3ec3-488c-a455-0607c1abb2c1.png">
 <img width="283" alt="teaser_home" src="https://user-images.githubusercontent.com/100839308/173715540-7841cc14-7b71-477e-99e0-36fc7776d5cc.png">
