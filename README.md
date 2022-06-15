@@ -1,6 +1,6 @@
 ## FreshCollect
 
-Check out the final result of our app [FreshCollect](http://www.fresh-collect.xyz). Important! It is optimized for mobile only. So switch to mobile view, login and let's go! 
+Check out the final result of our app [FreshCollect](http://www.fresh-collect.xyz). Important! It is optimized for mobile only. So switch to mobile view, sign up and let's go! 
 <br>
 
 ## Team members
