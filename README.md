@@ -1,5 +1,12 @@
+## FreshCollect
+
 Check out the final result of our app [FreshCollect](http://www.fresh-collect.xyz). Important! It is optimized for mobile only. So switch to mobile view, login and let's go! 
 <br>
+
+## Team members
+[Fiona Feichtinger](https://github.com/Fiona2202), [Sina Beeler](https://github.com/sinabeeler) and [Alexander Wu](https://github.com/wu-alexander)
+<br>
+
 ## DB schema
 <p align="center">
 <img width="597" alt="db_schema" src="https://user-images.githubusercontent.com/100839308/173716285-71fb7985-f189-4c85-bd61-c4f50358d187.png">
