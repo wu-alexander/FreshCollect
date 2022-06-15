@@ -13,8 +13,8 @@ Check out the final result of our app [FreshCollect](http://www.fresh-collect.xy
 <img width="283" alt="teaser_home" src="https://user-images.githubusercontent.com/100839308/173715540-7841cc14-7b71-477e-99e0-36fc7776d5cc.png">
 <img width="277" alt="screenshot_index" src="https://user-images.githubusercontent.com/100839308/173715138-9e47b0b5-0088-427b-8218-9b288767e003.png">
 </p>
-<br><br>
 
+<br><br>
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 
