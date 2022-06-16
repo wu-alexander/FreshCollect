@@ -25,6 +25,13 @@ FreshCollect is a mobile app with the goal of minimizing food waste by allowing 
 </p>
 <br>
 
+## Coding highlights!
+- Push notifications with [noticed](https://github.com/excid3/noticed) and [ActionCable](https://github.com/excid3/noticed/blob/master/docs/delivery_methods/action_cable.md ) delivery method to push them directly on the browser
+- Image Upload with an external Rails service [Cloudinary](https://cloudinary.com/documentation/rails_integration)
+- Using [Mapbox Geocoding API ](https://docs.mapbox.com/api/search/geocoding/) for Geocoding
+- 
+<br>
+
 ## Some design impressions
 
 <p align="center">
