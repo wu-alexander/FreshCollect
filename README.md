@@ -1,12 +1,10 @@
 ## FreshCollect
 
-FreshCollect is a mobile web app developed by 3 Le Wagon students as their final Project. 
-<br>
-Check out the result here: [FreshCollect](http://www.fresh-collect.xyz). Important! The app is optimised for mobile only. So switch to the mobile view, sign up and let's go! 
+FreshCollect is a mobile web app developed by 3 Le Wagon students as their final Project. Check out the result here: [FreshCollect](http://www.fresh-collect.xyz). Important! The app is optimised for mobile only. So switch to the mobile view, sign up and let's go! 
 <br>
 
 ###### Description 
-FreshCollect is a mobile app with the goal of minimizing food waste by allowing its users to share their leftover groceries at home with their neighborhood. Users can either browse their neighborhood on a live map for available items or simply share leftover produce from their homes in just a few steps. Both sharer and collector of items will be notified via push notification as soon as there is a change in their item of interest.
+FreshCollect is a mobile web app with the goal of minimizing food waste by allowing its users to share their leftover groceries at home with their neighborhood. Users can either browse their neighborhood on a live map for available items or simply share leftover produce from their homes in just a few steps. Both sharer and collector of items will be notified via push notification as soon as there is a change in their item of interest.
 <br>
 
 ## Team members
@@ -27,7 +25,7 @@ FreshCollect is a mobile app with the goal of minimizing food waste by allowing 
 
 ## Coding highlights!
 - Push notifications with [noticed](https://github.com/excid3/noticed) and [ActionCable](https://github.com/excid3/noticed/blob/master/docs/delivery_methods/action_cable.md ) delivery method to push them directly on the browser
-- Image Upload with an external Rails service [Cloudinary](https://cloudinary.com/documentation/rails_integration)
+- Image upload with an external Rails service [Cloudinary](https://cloudinary.com/documentation/rails_integration)
 - Using [Mapbox Geocoding API ](https://docs.mapbox.com/api/search/geocoding/) for Geocoding
 - Add [canvas-confetti ](https://www.npmjs.com/package/canvas-confetti) effect with JavaScript:
 
