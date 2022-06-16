@@ -55,6 +55,8 @@ export default class extends Controller {
 
 ## Some design impressions
 
+- Design mockups on [Figma](https://www.figma.com/file/z9cEZ2saIKWdeEfKP1vfE4/Untitled?node-id=4%3A46)
+
 <p align="center">
 <img width="200" height="350" alt="screenshot_home" src="https://user-images.githubusercontent.com/100839308/173715135-62635484-3ec3-488c-a455-0607c1abb2c1.png">
 <img width="200" height="350" alt="teaser_home" src="https://user-images.githubusercontent.com/100839308/173715540-7841cc14-7b71-477e-99e0-36fc7776d5cc.png">
