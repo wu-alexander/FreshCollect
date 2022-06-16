@@ -32,6 +32,7 @@ FreshCollect is a mobile app with the goal of minimizing food waste by allowing 
 - Add [canvas-confetti ](https://www.npmjs.com/package/canvas-confetti) effect with JavaScript
 <br>
 
+
 ## Some design impressions
 
 <p align="center">
