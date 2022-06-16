@@ -1,8 +1,8 @@
 ## FreshCollect
 
-FreshCollect is a mobile developed by 3 Le Wagon students as their final Project. 
+FreshCollect is a mobile web app developed by 3 Le Wagon students as their final Project. 
 <br>
-Check out the result here: [FreshCollect](http://www.fresh-collect.xyz). Sign up and let's go! 
+Check out the result here: [FreshCollect](http://www.fresh-collect.xyz). Important! The app is optimised for mobile only. So switch to the mobile view, sign up and let's go! 
 <br>
 
 ###### Description 
@@ -29,7 +29,29 @@ FreshCollect is a mobile app with the goal of minimizing food waste by allowing 
 - Push notifications with [noticed](https://github.com/excid3/noticed) and [ActionCable](https://github.com/excid3/noticed/blob/master/docs/delivery_methods/action_cable.md ) delivery method to push them directly on the browser
 - Image Upload with an external Rails service [Cloudinary](https://cloudinary.com/documentation/rails_integration)
 - Using [Mapbox Geocoding API ](https://docs.mapbox.com/api/search/geocoding/) for Geocoding
-- Add [canvas-confetti ](https://www.npmjs.com/package/canvas-confetti) effect with JavaScript
+- Add [canvas-confetti ](https://www.npmjs.com/package/canvas-confetti) effect with JavaScript:
+
+```
+import * as confetti from 'canvas-confetti'
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  connect() {
+    var myConfetti = confetti.create(this.element, {
+      resize: true,
+      useWorker: true
+    });
+    myConfetti({
+      particleCount: 200,
+      spread: 160,
+      colors: ["#D76834", "#E08E44", "#74896D"]
+    });
+  }
+  hide() {
+    this.element.remove()
+  }
+}
+```
 <br>
 
 
