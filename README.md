@@ -1,6 +1,12 @@
 ## FreshCollect
 
-Check out the final result of our app [FreshCollect](http://www.fresh-collect.xyz). Important! It is optimized for mobile only. So switch to mobile view, sign up and let's go! 
+FreshCollect is a mobile developed by 3 Le Wagon students as their final Project. 
+<br>
+Check out the result here: [FreshCollect](http://www.fresh-collect.xyz). Sign up and let's go! 
+<br>
+
+###### Description 
+FreshCollect is a mobile app with the goal of minimizing food waste by allowing its users to share their leftover groceries at home with their neighborhood. Users can either browse their neighborhood on a live map for available items or simply share leftover produce from their homes in just a few steps. Both sharer and collector of items will be notified via push notification as soon as there is a change in their item of interest.
 <br>
 
 ## Team members
