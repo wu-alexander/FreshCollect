@@ -13,3 +13,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.mobile-link {
+  display: none;
+  height: 100vh;
+}
+
+@media screen and (min-width: 600px) {
+  .testk {
+    display: none;
+  }
+
+  .mobile-link {
+    display: block;
+    text-align: center;
+    justify-content: center;
+
+    img {
+      width: 400px;
+      height: 534px;
+    }
+  }
+}

@@ -34,8 +34,17 @@
     <%#= render "notifications/popup_notification",
       notification: Notification.where(type: "PickupNotification").last.to_notification %>
 
-    <div class="flex-grow-1">
+    <div class="flex-grow-1 testk">
       <%= yield %>
+    </div>
+    <div class="mobile-link">
+      <p class="">
+      <br>
+        This is web app. Please click on the link below to visit the app in mobile view.
+      </p>
+      <a href="#" onClick="window.open('https://www.fresh-collect.xyz', '' ,'height=736,width=414'); return false;">Open it in a mobile window</a>
+      <br>
+      <%= image_tag('Iphone_Home_FC_new.png') %>
     </div>
     <%= render 'shared/footer' if current_page?(root_path) %>
     <%= render "shared/mobile_menu" if current_user.present? %>
